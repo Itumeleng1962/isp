@@ -293,3 +293,40 @@ a { transition: color .25s ease, background-color .25s ease, border-color .25s e
 }
 
 
+/* WhatsApp floating button and modal */
+.wa-fab {
+  position: fixed; right: 18px; bottom: 74px; width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; background: #25D366; color: #fff; box-shadow: var(--shadow);
+  z-index: 1000; cursor: pointer; border: 0;
+}
+.wa-fab:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.wa-fab:active { transform: translateY(0); }
+.wa-fab svg { width: 26px; height: 26px; fill: #ffffff; }
+
+.wa-modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.46); display: none; align-items: center; justify-content: center; z-index: 1100; }
+.wa-modal-backdrop.open { display: flex; }
+
+.wa-modal {
+  width: min(420px, 92%);
+  background: #ffffff; border-radius: 14px; box-shadow: 0 30px 80px rgba(0,0,0,.28);
+  overflow: hidden; transform: translateY(14px); opacity: 0; transition: transform .25s ease, opacity .25s ease;
+}
+.wa-modal.open { transform: translateY(0); opacity: 1; }
+
+.wa-modal-header { display: flex; align-items: center; justify-content: space-between; padding: .9rem 1rem; background: var(--big-stone); color: #fff; }
+.wa-modal-title { font-weight: 800; margin: 0; font-size: 1.05rem; }
+.wa-modal-close { background: transparent; border: 0; color: #fff; font-size: 1.4rem; cursor: pointer; padding: .2rem .4rem; border-radius: 8px; }
+.wa-modal-close:hover { background: rgba(255,255,255,.08); }
+
+.wa-modal-body { padding: 1rem; display: grid; gap: .8rem; }
+.wa-input, .wa-textarea { width: 100%; padding: .8rem .9rem; border-radius: 10px; border: 1px solid rgba(12,24,36,.12); background: #fbfbfa; font: inherit; color: var(--big-stone); }
+.wa-input:focus, .wa-textarea:focus { outline: 2px solid rgba(37,211,102,.25); border-color: #25D366; background: #fff; }
+
+.wa-actions { display: flex; gap: .6rem; justify-content: flex-end; margin-top: .2rem; }
+.wa-send { background: #25D366; color: #0b141a; border: 0; padding: .8rem 1rem; border-radius: 10px; font-weight: 800; cursor: pointer; }
+.wa-send:hover { filter: brightness(1.05); }
+.wa-cancel { background: transparent; border: 1px solid rgba(12,24,36,.16); padding: .8rem 1rem; border-radius: 10px; cursor: pointer; }
+
+.wa-small { color: var(--limed-ash); font-size: .9rem; }
+
+
