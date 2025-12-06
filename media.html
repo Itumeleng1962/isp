@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Media Production | Photography & Video</title>
+    <meta name="description"
+        content="Professional photography and videography services. Capturing life's moments with creativity and style.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo.png">
+    <style>
+        /* Portfolio slider styles (shared with main theme colors) */
+        .portfolio-grid {
+            overflow: hidden;
+            margin-top: 3rem;
+        }
+
+        .portfolio-track {
+            display: flex;
+            gap: 1.75rem;
+            width: max-content;
+            animation: portfolio-scroll 40s linear infinite;
+        }
+
+        .portfolio-track:hover {
+            animation-play-state: paused;
+        }
+
+        .portfolio-item {
+            position: relative;
+            flex: 0 0 220px;
+            max-width: 220px;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+            transform: translateY(0) scale(1);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 55%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        @keyframes portfolio-scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.15rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            z-index: 1200;
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-inner {
+            position: relative;
+            max-width: min(1040px, 94vw);
+            max-height: 88vh;
+            background: #020617;
+            border-radius: 20px;
+            padding: 1.5rem 3.5rem;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
+            transform: translateY(20px) scale(0.94);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .lightbox.open .lightbox-inner {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .lightbox-image-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 16px;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .lightbox-counter {
+            color: rgba(148, 163, 184, 0.9);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .lightbox-arrow {
+            pointer-events: auto;
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.24), rgba(15, 23, 42, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #e5e7eb;
+            margin: 0 0.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .lightbox-arrow:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+            border-color: rgba(248, 250, 252, 0.9);
+            background: radial-gradient(circle at 30% 30%, rgba(248, 250, 252, 0.3), rgba(15, 23, 42, 1));
+        }
+
+        .lightbox-arrow svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 0.3rem;
+            right: 0.8rem;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .lightbox-close:hover {
+            color: #fff;
+        }
+
+        /* slide animations */
+        .slide-in-right {
+            animation: slideInRight 0.4s ease forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.4s ease forwards;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body class="media-page">
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">ISP</span>
+                    <span class="brand-tagline">International Services Production</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Cleaning Services</a></li>
+                    <li><a href="media.html" class="active">Media Production</a></li>
+                    <li><a href="models.html">Modelling Agency</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="height: 70vh; min-height: 500px;">
+            <div class="hero-bg-wrapper">
+                <img src="images/photographpic8.jpeg" alt="Camera lens" class="hero-bg">
+                <div class="hero-overlay"
+                    style="background: linear-gradient(135deg, rgba(6,6,9,0.9), rgba(15,78,152,0.6));"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-badge reveal" style="border-color: rgba(255,255,255,0.3);">Cinematic Quality</div>
+                <h1 class="reveal">Capturing Life's <span class="text-gradient"
+                        style="background: linear-gradient(135deg, #fbbf24, #d97706); -webkit-background-clip: text;">Greatest
+                        Moments</span></h1>
+                <p class="reveal">Professional photography and videography dedicated to telling your unique story with
+                    creativity and style.</p>
+                <div class="hero-actions reveal">
+                    <a href="#portfolio" class="btn btn-primary btn-lg">View Portfolio</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Book a Session</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="split-layout">
+                    <div class="split-image reveal">
+                        <img src="images/professionalpic.jpeg" alt="Professional Photographer"
+                            class="rounded-image shadow-lg">
+                    </div>
+                <div class="split-content reveal panel-gradient">
+                        <span class="section-tag">Visual Storytelling</span>
+                        <h2>We Don't Just Take Photos, We Create Art</h2>
+                        <p>With a keen eye for detail and a passion for storytelling, we create stunning visual content that
+                            speaks for itself. Whether it's a corporate event, a wedding, or a personal portrait, we bring a
+                            creative, personalized touch to every project.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>Creative Vision</strong>
+                                    <p>Innovative and artistic approach to every shot.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>High-End Gear</strong>
+                                    <p>We use professional-grade cameras and lighting.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>Expert Editing</strong>
+                                    <p>Post-production that enhances the natural beauty.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Services -->
+        <section class="section services-section bg-light">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-tag">Our Services</span>
+                    <h2>Comprehensive Media Solutions</h2>
+                    <p>From capturing moments to crafting stories, we offer a full range of professional media services.</p>
+                </div>
+
+                <div class="grid services-grid reveal">
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">📸</div>
+                        <h3>Photography</h3>
+                        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; color: rgba(255, 255, 255, 0.9);">
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Portraits
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Weddings
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Events
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Landscapes
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Product Photography
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">🎥</div>
+                        <h3>Videography</h3>
+                        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; color: rgba(255, 255, 255, 0.9);">
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Corporate Videos
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Event Coverage
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Wedding Videos
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Promotional Videos
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">✨</div>
+                        <h3>Post-Production</h3>
+                        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; color: rgba(255, 255, 255, 0.9);">
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Editing
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Color Grading
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;">
+                                <span style="position: absolute; left: 0;">•</span> Visual Effects
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="portfolio">
+            <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Our Work</span>
+                <h2>Featured Portfolio</h2>
+                <p>A glimpse into the stories we've helped tell across weddings, brands, and everyday life.</p>
+            </div>
+
+            <div class="portfolio-grid reveal">
+                <div class="portfolio-track">
+                    <!-- loop 1 -->
+                    <div class="portfolio-item" data-caption="Timeless wedding photography capturing candid emotions.">
+                        <img src="images/photographpic8.jpeg" alt="Wedding Photography">
+                        <div class="portfolio-overlay">
+                            <h3>Weddings & Events</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Corporate portraits and branding visuals for modern teams.">
+                        <img src="images/professionalpic.jpeg" alt="Corporate Photography">
+                        <div class="portfolio-overlay">
+                            <h3>Corporate & Branding</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Polished lifestyle visuals for cleaning and home brands.">
+                        <img src="images/SparkleshineBG.png" alt="Product & Lifestyle Photography">
+                        <div class="portfolio-overlay">
+                            <h3>Product & Lifestyle</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Warm family moments preserved in cinematic light.">
+                        <img src="images/photographpic2.jpeg" alt="Family photography in living room">
+                        <div class="portfolio-overlay">
+                            <h3>Family Moments</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Editorial-style portraits with a touch of drama.">
+                        <img src="images/photographpic3.jpeg" alt="Editorial portrait">
+                        <div class="portfolio-overlay">
+                            <h3>Portrait Sessions</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Location shoots showcasing real spaces and real people.">
+                        <img src="images/photographpic4.jpeg" alt="On-location lifestyle shoot">
+                        <div class="portfolio-overlay">
+                            <h3>On-Location Shoots</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Clean, bright imagery perfect for property listings.">
+                        <img src="images/photographpic5.jpeg" alt="Interior property photography">
+                        <div class="portfolio-overlay">
+                            <h3>Property & Interiors</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Behind-the-scenes media production stills.">
+                        <img src="images/photographpic6.jpeg" alt="Behind the scenes photography">
+                        <div class="portfolio-overlay">
+                            <h3>Behind The Scenes</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Vibrant city-life imagery for campaigns and socials.">
+                        <img src="images/photographpic7.jpeg" alt="Urban lifestyle photography">
+                        <div class="portfolio-overlay">
+                            <h3>Urban Lifestyle</h3>
+                        </div>
+                    </div>
+                    <!-- loop 2 (duplicate for seamless infinite scroll) -->
+                    <div class="portfolio-item" data-caption="Timeless wedding photography capturing candid emotions.">
+                        <img src="images/photographpic8.jpeg" alt="Wedding Photography">
+                        <div class="portfolio-overlay">
+                            <h3>Weddings & Events</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Corporate portraits and branding visuals for modern teams.">
+                        <img src="images/professionalpic.jpeg" alt="Corporate Photography">
+                        <div class="portfolio-overlay">
+                            <h3>Corporate & Branding</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Polished lifestyle visuals for cleaning and home brands.">
+                        <img src="images/SparkleshineBG.png" alt="Product & Lifestyle Photography">
+                        <div class="portfolio-overlay">
+                            <h3>Product & Lifestyle</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Warm family moments preserved in cinematic light.">
+                        <img src="images/photographpic2.jpeg" alt="Family photography in living room">
+                        <div class="portfolio-overlay">
+                            <h3>Family Moments</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Editorial-style portraits with a touch of drama.">
+                        <img src="images/photographpic3.jpeg" alt="Editorial portrait">
+                        <div class="portfolio-overlay">
+                            <h3>Portrait Sessions</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Location shoots showcasing real spaces and real people.">
+                        <img src="images/photographpic4.jpeg" alt="On-location lifestyle shoot">
+                        <div class="portfolio-overlay">
+                            <h3>On-Location Shoots</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Clean, bright imagery perfect for property listings.">
+                        <img src="images/photographpic5.jpeg" alt="Interior property photography">
+                        <div class="portfolio-overlay">
+                            <h3>Property & Interiors</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Behind-the-scenes media production stills.">
+                        <img src="images/photographpic6.jpeg" alt="Behind the scenes photography">
+                        <div class="portfolio-overlay">
+                            <h3>Behind The Scenes</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-caption="Vibrant city-life imagery for campaigns and socials.">
+                        <img src="images/photographpic7.jpeg" alt="Urban lifestyle photography">
+                        <div class="portfolio-overlay">
+                            <h3>Urban Lifestyle</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" aria-label="Close image">&times;</button>
+            <div class="lightbox-image-wrapper">
+                <div class="lightbox-nav">
+                    <button class="lightbox-arrow" id="lightbox-prev" aria-label="Previous image">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M15.5 19.5L9 13l6.5-6.5L17 8l-5 5 5 5z" />
+                        </svg>
+                    </button>
+                    <button class="lightbox-arrow" id="lightbox-next" aria-label="Next image">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M8.5 4.5L15 11l-6.5 6.5L7 16l5-5-5-5z" />
+                        </svg>
+                    </button>
+                </div>
+                <img src="" alt="" class="lightbox-image">
+            </div>
+            <div class="lightbox-caption">
+                <span class="lightbox-caption-text"></span>
+                <span class="lightbox-counter"></span>
+            </div>
+        </div>
+    </div>
+
+        <section class="section cta-section">
+            <div class="container text-center">
+                <div class="cta-box reveal" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
+                    <h2>Let's Tell Your Story</h2>
+                    <p>Book your session today and let us capture the magic.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                        <a href="tel:+27123456789" class="btn btn-outline btn-lg">Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <span class="brand-name">ISP</span>
+                        <span class="brand-tagline">International Services Production</span>
+                    </div>
+                </a>
+                <p class="text-light">Premium cleaning and media services trusted by families and businesses across
+                    Johannesburg.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="models.html">Modelling</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Top Services</h3>
+                <ul>
+                    <li><a href="services.html">Residential Cleaning</a></li>
+                    <li><a href="services.html">Commercial Cleaning</a></li>
+                    <li><a href="services.html">Deep Cleaning</a></li>
+                    <li><a href="services.html">Move-In / Move-Out</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📍 Johannesburg, South Africa</p>
+                <p>📞 <a href="tel:+27123456789">+27 12 345 6789</a></p>
+                <p>✉️ <a href="mailto:info@isp.co.za">info@isp.co.za</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Services Production. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/27123456789" class="wa-fab" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" class="wa-icon">
+            <path
+                d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.8 1.9 6.8L2.6 29.2l6.6-1.7C11.1 28.9 13.5 29.6 16 29.6c7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.2 0-4.4-.6-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.5-.3-.5C4.3 19.6 3.7 17.5 3.7 16c0-6.8 5.5-12.3 12.3-12.3s12.3 5.5 12.3 12.3-5.5 12.4-12.3 12.4zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.3-.5.3-.9.1-1.7-.9-2.8-2-3.9-3.9-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 2.6 1.1 3.7 1.2 5 .1.9-.8 2.2-1.8 2.5-2.9.3-1.1.3-2 .2-2.2-.1-.2-.3-.3-.7-.5z"
+                fill="currentColor" />
+        </svg>
+    </a>
+
+    <script>
+        // Simple scroll reveal script
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+
+            // Mobile menu toggle
+            const toggle = document.querySelector('.nav-toggle');
+            const navList = document.querySelector('.nav-list');
+            toggle.addEventListener('click', () => {
+                navList.classList.toggle('open');
+            });
+
+            // Portfolio lightbox carousel
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+            const lightboxCaptionText = lightbox.querySelector('.lightbox-caption-text');
+            const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+            const btnPrev = document.getElementById('lightbox-prev');
+            const btnNext = document.getElementById('lightbox-next');
+
+            const slides = Array.from(portfolioItems).map(item => {
+                const img = item.querySelector('img');
+                return {
+                    src: img.src,
+                    alt: img.alt || '',
+                    caption: item.getAttribute('data-caption') || img.alt || ''
+                };
+            });
+
+            let currentIndex = 0;
+            let autoPlayId = null;
+            const AUTO_PLAY_INTERVAL = 6000; // ms
+
+            const showSlide = (index, direction = 'right') => {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                currentIndex = index;
+
+                const slide = slides[currentIndex];
+                lightboxImg.classList.remove('slide-in-left', 'slide-in-right');
+
+                // force reflow to restart animation
+                void lightboxImg.offsetWidth;
+
+                lightboxImg.src = slide.src;
+                lightboxImg.alt = slide.alt;
+                lightboxCaptionText.textContent = slide.caption;
+                lightboxCounter.textContent = `${currentIndex + 1} / ${slides.length}`;
+                lightboxImg.classList.add(direction === 'right' ? 'slide-in-right' : 'slide-in-left');
+            };
+
+            const startAutoPlay = () => {
+                if (autoPlayId) clearInterval(autoPlayId);
+                autoPlayId = setInterval(() => {
+                    showSlide(currentIndex + 1, 'right');
+                }, AUTO_PLAY_INTERVAL);
+            };
+
+            const stopAutoPlay = () => {
+                if (autoPlayId) {
+                    clearInterval(autoPlayId);
+                    autoPlayId = null;
+                }
+            };
+
+            const openLightbox = (startIndex) => {
+                showSlide(startIndex, 'right');
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                startAutoPlay();
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+                stopAutoPlay();
+            };
+
+            portfolioItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    openLightbox(index);
+                });
+            });
+
+            btnPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showSlide(currentIndex - 1, 'left');
+                startAutoPlay();
+            });
+
+            btnNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showSlide(currentIndex + 1, 'right');
+                startAutoPlay();
+            });
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    showSlide(currentIndex + 1, 'right');
+                    startAutoPlay();
+                } else if (e.key === 'ArrowLeft') {
+                    showSlide(currentIndex - 1, 'left');
+                    startAutoPlay();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

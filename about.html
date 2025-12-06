@@ -1,301 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About | Cleaning Services</title>
+    <title>About Us | ISP</title>
+    <meta name="description"
+        content="Learn about International Services Production, our mission, values, and commitment to excellence.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png">
 </head>
+
 <body>
+    <!-- Navigation -->
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="brand" aria-label="Home">
-                <img src="images/logo.png" alt="Company logo" class="brand-logo" />
-                <span class="brand-name">International Services <span class="accent">Production</span></span>
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">ISP</span>
+                    <span class="brand-tagline">International Services Production</span>
+                </div>
             </a>
-            <nav class="nav" aria-label="Primary">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </button>
-                <ul id="primary-menu" class="nav-list">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Cleaning Services</a></li>
+                    <li><a href="media.html">Media Production</a></li>
+                    <li><a href="models.html">Modelling Agency</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="quote.html" class="btn btn-primary btn-small">Get a Quote</a></li>
+                    <li><a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" style="min-height:40vh;">
-        <img class="hero-bg" src="images/SparkleshineBG.png" alt="Cleaning hero" />
-        <div class="hero-overlay"></div>
+    <section class="hero page-hero">
+        <div class="hero-bg-wrapper">
+            <img src="images/photographpic10.jpeg" alt="ISP team at work" class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container hero-content">
-            <h1>Our Story</h1>
-            <p>Committed to reliability, quality, and a healthier clean.</p>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Company Snapshot</h2>
-                <p>Key registration, banking, and contact details.</p>
-            </header>
-            <div class="grid" style="grid-template-columns: repeat(2,1fr); gap: 1rem;">
-                <article class="card">
-                    <h3>Registered Details</h3>
-                    <ul class="details-list" style="margin-top:.4rem;">
-                        <li><span class="detail-label">Company name</span> <span>International services and production (PTY) LTD</span></li>
-                        <li><span class="detail-label">Enterprise type</span> <span>Private Company (In Business)</span></li>
-                        <li><span class="detail-label">Financial year‑end</span> <span>February</span></li>
-                    </ul>
-                </article>
-                <article class="card">
-                    <h3>Banking</h3>
-                    <ul class="details-list" style="margin-top:.4rem;">
-                        <li><span class="detail-label">Bank</span> <span>Capitec Business</span></li>
-                        <li><span class="detail-label">Account type</span> <span>Current</span></li>
-                        <li><span class="detail-label">Account number</span> <span>1054204004</span></li>
-                        <li><span class="detail-label">Branch code</span> <span>450105</span></li>
-                    </ul>
-                </article>
-                <article class="card">
-                    <h3>Addresses</h3>
-                    <ul class="details-list" style="margin-top:.4rem;">
-                        <li><span class="detail-label">Physical</span> <span>Republic of South Africa, Gauteng Province, 1632, Winnie Mandela Park, Zone 7, 8970</span></li>
-                        <li><span class="detail-label">Postal</span> <span>Republic of South Africa, Gauteng Province, Tembisa, 1632, Winnie Mandela Park, Zone 7, 8970</span></li>
-                        <li><span class="detail-label">Registered Office</span> <span>1849 Thulamahashe, Section A, Mpumalanga, 1365</span></li>
-                    </ul>
-                </article>
-                <article class="card">
-                    <h3>Contact</h3>
-                    <ul class="details-list" style="margin-top:.4rem;">
-                        <li><span class="detail-label">Email</span> <a href="mailto:info@ispgroupofafrica.co.za">info@ispgroupofafrica.co.za</a></li>
-                        <li><span class="detail-label">Phone</span> <a href="tel:+27747394461">+27 747 394 461</a></li>
-                        <li><span class="detail-label">Contact Person</span> <span>Nevermind Bonginkosi Mhlanga</span></li>
-                        <li><span class="detail-label">Direct</span> <span><a href="tel:+27747394461">+27 747 394 461</a></span></li>
-                    </ul>
-                </article>
+            <div class="hero-badge reveal">About ISP</div>
+            <h1 class="reveal">Crafting Trust Through <span class="text-gradient">Exceptional Service</span></h1>
+            <p class="reveal">Discover the people, processes, and passion driving International Services Production to
+                raise the standard of clean and creativity across South Africa.</p>
+            <div class="hero-actions reveal">
+                <a href="services.html" class="btn btn-primary btn-lg">Explore Services</a>
+                <a href="contact.html" class="btn btn-outline btn-lg">Talk to Us</a>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Background</h2>
-                <p>Who we are and why we exist.</p>
-            </header>
-            <div class="card">
-                <p>International services and production is a private company founded by Nevermind Bonginkosi Mhlanga after recognizing the lack of opportunities in townships. The company provides training and job opportunities, especially for young people, and partners with public and private stakeholders to bring technology and services to underserved communities nationwide.</p>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-tag">Who We Are</span>
+                    <h2>Company Snapshot</h2>
+                    <p>International Services and Production (PTY) LTD is a registered private company committed to
+                        professional service delivery.</p>
+                </div>
 
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Vision & Mission</h2>
-            </header>
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
-                <article class="card">
-                    <h3>Vision</h3>
-                    <p class="muted">Fight unemployment across Africa by empowering people from disadvantaged backgrounds to earn an honest living through their gifts and talents, prioritizing education and steering youth away from crime.</p>
-                </article>
-                <article class="card">
-                    <h3>Mission</h3>
-                    <p class="muted">Employ, mentor, brand, and train talented people from disadvantaged backgrounds so they become well‑groomed, competent professionals in the fields their talents lead.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="card reveal">
+                        <div class="card-icon-wrapper">📄</div>
+                        <h3>Registered Details</h3>
+                        <ul class="feature-list" style="margin: 1rem 0;">
+                            <li style="margin-bottom: 0.5rem; display: block;">
+                                <small class="text-muted">Company Name</small>
+                                <div style="font-weight: 600;">International Services and Production (PTY) LTD</div>
+                            </li>
+                            <li style="margin-bottom: 0.5rem; display: block;">
+                                <small class="text-muted">Enterprise Type</small>
+                                <div style="font-weight: 600;">Private Company</div>
+                            </li>
+                        </ul>
+                    </div>
 
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Ethos</h2>
-            </header>
-            <div class="card">
-                <p>We regard people as our greatest asset and prioritize clear communication, sound planning, and flexible programming. Our management is caring and future‑oriented, and our commitment to this ethos drives consistent quality on every project.</p>
-            </div>
-        </div>
-    </section>
+                    <div class="card reveal">
+                        <div class="card-icon-wrapper">🏦</div>
+                        <h3>Banking Details</h3>
+                        <ul class="feature-list" style="margin: 1rem 0;">
+                            <li style="margin-bottom: 0.5rem; display: block;">
+                                <small class="text-muted">Bank</small>
+                                <div style="font-weight: 600;">Capitec Business</div>
+                            </li>
+                            <li style="margin-bottom: 0.5rem; display: block;">
+                                <small class="text-muted">Account Number</small>
+                                <div style="font-weight: 600;">1054204004</div>
+                            </li>
+                        </ul>
+                    </div>
 
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Services & Capabilities</h2>
-            </header>
-            <div class="grid" style="grid-template-columns: repeat(2,1fr); gap:1rem;">
-                <article class="card">
-                    <h3>Service Range</h3>
-                    <ul class="checks">
-                        <li>Specialized cleaning for homes, offices, retail, buildings, automobiles</li>
-                        <li>One‑time, daily, weekly, monthly, annual contracts</li>
-                        <li>Hygiene solutions and labor outsourcing</li>
-                        <li>Recycling and waste management</li>
-                    </ul>
-                </article>
-                <article class="card">
-                    <h3>Advantages</h3>
-                    <ul class="checks">
-                        <li>Adherence to specifications & attention to detail</li>
-                        <li>Clear communication and swift feedback</li>
-                        <li>High‑quality, safe products and sustainable practices</li>
-                        <li>Qualified staff and auditable QA processes</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Management & HR</h2>
-            </header>
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:1rem;">
-                <article class="card">
-                    <h3>Key Roles</h3>
-                    <ul class="details-list">
-                        <li><span class="detail-label">Founder</span> <span>Nevermind Bonginkosi Mhlanga</span></li>
-                        <li><span class="detail-label">Team</span> <span>Director, Managing Director, General Manager, Administrators, Domestic workers, Cleaners</span></li>
-                    </ul>
-                </article>
-                <article class="card">
-                    <h3>Chemicals We Use</h3>
-                    <ul class="details-list">
-                        <li><span class="detail-label">SAN G</span> <span>Tables, floors, windows</span></li>
-                        <li><span class="detail-label">Hand San</span> <span>Hand sanitiser</span></li>
-                        <li><span class="detail-label">Chloral F</span> <span>Dishes/plates</span></li>
-                        <li><span class="detail-label">Sparkle 2</span> <span>Wash bay, floors, windows, tables</span></li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Meet The Team</h2>
-                <p>Skilled, background‑checked professionals who care about the details.</p>
-            </header>
-            <div class="grid" style="grid-template-columns: repeat(3,1fr); gap: 1rem;">
-                <article class="card"><h3>Operations Lead</h3><p class="muted">Schedules, QA spot‑checks, and client updates.</p></article>
-                <article class="card"><h3>Senior Cleaner</h3><p class="muted">Deep‑clean specialist and training mentor.</p></article>
-                <article class="card"><h3>Customer Success</h3><p class="muted">Your point of contact for quotes and support.</p></article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Certifications & Safety</h2>
-            </header>
-            <div class="grid" style="grid-template-columns: repeat(3,1fr); gap: 1rem;">
-                <article class="card"><h3>Insured & Compliant</h3><p class="muted">Public liability cover and safety protocols.</p></article>
-                <article class="card"><h3>Health‑First Practices</h3><p class="muted">Gloves, masks on request, and sanitization.</p></article>
-                <article class="card"><h3>Eco Options</h3><p class="muted">Green products available upon request.</p></article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Service Coverage</h2>
-                <p>Greater Johannesburg and neighboring suburbs.</p>
-            </header>
-            <ul class="pill-list">
-                <li class="pill">Sandton</li>
-                <li class="pill">Randburg</li>
-                <li class="pill">Rosebank</li>
-                <li class="pill">Fourways</li>
-                <li class="pill">Midrand</li>
-                <li class="pill">Bryanston</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section about">
-        <div class="container about-grid">
-            <div class="about-media img-zoom">
-                <img src="https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?q=80&w=1600&auto=format&fit=crop" alt="Cleaning team at work" />
-            </div>
-            <div class="about-content">
-                <h2>Why We Started</h2>
-                <p>We launched with a simple mission: make professional cleaning straightforward and dependable. Today, we serve homes and businesses with vetted cleaners, clear communication, and meticulous standards.</p>
-                <ul class="checks">
-                    <li>Background-checked, trained staff</li>
-                    <li>Eco-friendly products upon request</li>
-                    <li>Transparent pricing and scheduling</li>
-                </ul>
-                <a href="services.html" class="btn btn-primary">Explore Services</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Our Values</h2>
-            </header>
-            <div class="grid" style="grid-template-columns: repeat(3,1fr); gap: 1rem;">
-                <article class="card"><h3>Trust</h3><p class="muted">We treat your space with care and respect.</p></article>
-                <article class="card"><h3>Quality</h3><p class="muted">Attention to detail in every clean.</p></article>
-                <article class="card"><h3>Reliability</h3><p class="muted">On time, every time, with clear updates.</p></article>
-            </div>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="brand brand--footer" aria-label="Home">
-                    <img src="images/logo.png" alt="Company logo" class="brand-logo" />
-                    <span class="brand-name">International Services <span class="accent">Production</span></span>
-                </a>
-                <p>Professional cleaning services you can trust. From homes to offices, we deliver reliable, high-quality cleaning with eco-friendly options and flexible scheduling.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="quote.html">Get a Quote</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:+27747394461">+27 747 394 461</a></li>
-                    <li><a href="mailto:info@ispgroupofafrica.co.za">info@ispgroupofafrica.co.za</a></li>
-                </ul>
-                <div class="social">
-                    <a href="https://wa.me/27747394461" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.5 11.5 0 0012 1 11 11 0 001 12a11 11 0 001.8 6.1L1 23l5-1.6A11 11 0 0012 23a11 11 0 100-22zm-8.5 18a9 9 0 01-4.6-1.3l-.3-.2-3 .9.8-2.9-.2-.3A9 9 0 1121 12a9 9 0 01-9 9zm5-6.7c-.3-.2-1.6-.8-1.9-.9s-.5-.1-.7.2-.6.9-.8 1.1-.3.2-.6.1a7.5 7.5 0 01-3.7-3.1c-.3-.3 0-.5.1-.7s.3-.3.4-.5.2-.3.3-.5 0-.4-.1-.6c-.1-.2-.7-1.7-.9-2.2s-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3a3.2 3.2 0 00-1 2.3 5.5 5.5 0 001.1 2.9 12.6 12.6 0 005 4.5 5.5 5.5 0 003 1.1c.7 0 1.4-.2 2-.7a2.7 2.7 0 00.9-2c0-.4 0-.6-.1-.8s-.3-.3-.6-.4z"/></svg></a>
+                    <div class="card reveal">
+                        <div class="card-icon-wrapper">📞</div>
+                        <h3>Contact Info</h3>
+                        <ul class="feature-list" style="margin: 1rem 0;">
+                            <li style="margin-bottom: 0.5rem; display: block;">
+                                <small class="text-muted">Contact Person</small>
+                                <div style="font-weight: 600;">Nevermind Bonginkosi Mhlanga</div>
+                            </li>
+                            <li style="margin-bottom: 0.5rem; display: block;">
+                                <small class="text-muted">Phone</small>
+                                <div style="font-weight: 600;"><a href="tel:+27747394461">+27 747 394 461</a></div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="split-layout">
+                    <div class="split-image reveal">
+                        <img src="images/photographpic8.jpeg" alt="Our Vision" class="rounded-image shadow-lg">
+                    </div>
+                <div class="split-content reveal panel-gradient">
+                        <span class="section-tag">Our Mission</span>
+                        <h2>Creating Cleaner, Brighter Futures</h2>
+                        <p>Our mission is to provide top-tier cleaning and media solutions that empower our clients to focus
+                            on what matters most. We believe in integrity, hard work, and the power of a job well done.</p>
+                        <div class="trust-grid"
+                            style="margin-top: 2rem; box-shadow: none; padding: 0; background: transparent;">
+                            <div class="trust-item">
+                                <span class="trust-icon">🤝</span>
+                                <div class="trust-text">
+                                    <strong>Integrity</strong>
+                                    <span>Honest & Transparent</span>
+                                </div>
+                            </div>
+                            <div class="trust-item">
+                                <span class="trust-icon">⭐</span>
+                                <div class="trust-text">
+                                    <strong>Quality</strong>
+                                    <span>Excellence in all we do</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <span class="brand-name">ISP</span>
+                        <span class="brand-tagline">International Services Production</span>
+                    </div>
+                </a>
+                <p class="text-light">Premium cleaning and media services trusted by families and businesses across
+                    Johannesburg.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="models.html">Modelling</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Top Services</h3>
+                <ul>
+                    <li><a href="services.html">Residential Cleaning</a></li>
+                    <li><a href="services.html">Commercial Cleaning</a></li>
+                    <li><a href="services.html">Deep Cleaning</a></li>
+                    <li><a href="services.html">Move-In / Move-Out</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📍 Johannesburg, South Africa</p>
+                <p>📞 <a href="tel:+27123456789">+27 12 345 6789</a></p>
+                <p>✉️ <a href="mailto:info@isp.co.za">info@isp.co.za</a></p>
+            </div>
         </div>
-        <div class="container footer-bottom">
-            <p>&copy; <span id="year"></span> International Services Production (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Services Production. All rights reserved.</p>
         </div>
     </footer>
 
-    <a href="#top" class="to-top" aria-label="Back to top">▲</a>
-    <script src="script.js"></script>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/27123456789" class="wa-fab" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" class="wa-icon">
+            <path
+                d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.8 1.9 6.8L2.6 29.2l6.6-1.7C11.1 28.9 13.5 29.6 16 29.6c7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.2 0-4.4-.6-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.5-.3-.5C4.3 19.6 3.7 17.5 3.7 16c0-6.8 5.5-12.3 12.3-12.3s12.3 5.5 12.3 12.3-5.5 12.4-12.3 12.4zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.3-.5.3-.9.1-1.7-.9-2.8-2-3.9-3.9-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 2.6 1.1 3.7 1.2 5 .1.9-.8 2.2-1.8 2.5-2.9.3-1.1.3-2 .2-2.2-.1-.2-.3-.3-.7-.5z"
+                fill="currentColor" />
+        </svg>
+    </a>
+
+    <script>
+        // Simple scroll reveal script
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+
+            // Mobile menu toggle
+            const toggle = document.querySelector('.nav-toggle');
+            const navList = document.querySelector('.nav-list');
+            toggle.addEventListener('click', () => {
+                navList.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
+
 </html>
-
-

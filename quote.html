@@ -1,155 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Get a Quote | Cleaning Services</title>
+    <title>Get a Quote | ISP</title>
+    <meta name="description"
+        content="Request a free, no-obligation quote for our professional cleaning and media services.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png">
+    <style>
+        .quote-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border-top: 5px solid var(--tory-blue);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--cinder);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--off-white);
+            background: var(--off-white);
+            border-radius: 12px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--malibu);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(102, 190, 242, 0.1);
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .form-check input {
+            width: 1.2rem;
+            height: 1.2rem;
+            accent-color: var(--tory-blue);
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Navigation -->
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="brand" aria-label="Home">
-                <img src="images/logo.png" alt="Company logo" class="brand-logo" />
-                <span class="brand-name">International Services <span class="accent">Production</span></span>
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">ISP</span>
+                    <span class="brand-tagline">International Services Production</span>
+                </div>
             </a>
-            <nav class="nav" aria-label="Primary">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </button>
-                <ul id="primary-menu" class="nav-list">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Cleaning Services</a></li>
+                    <li><a href="media.html">Media Production</a></li>
+                    <li><a href="models.html">Modelling Agency</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="quote.html" class="btn btn-primary btn-small">Get a Quote</a></li>
+                    <li><a href="quote.html" class="btn btn-primary btn-sm active">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" style="min-height:40vh;">
-        <img class="hero-bg" src="images/SparkleshineBG.png" alt="Quote hero" />
-        <div class="hero-overlay"></div>
+    <section class="hero page-hero">
+        <div class="hero-bg-wrapper">
+            <img src="images/photographpic9.jpeg" alt="Client consultation" class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container hero-content">
-            <h1>Get a Free Quote</h1>
-            <p>Tell us about your space and preferred schedule.</p>
-        </div>
-    </section>
-
-    <section class="section contact">
-        <div class="container contact-grid">
-            <div class="contact-form-wrapper">
-                <h2>Quote Request</h2>
-                <form class="contact-form" novalidate>
-                    <div class="form-field">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                        <span class="error" aria-live="polite"></span>
-                    </div>
-                    <div class="form-field">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="error" aria-live="polite"></span>
-                    </div>
-                    <div class="form-field">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
-                        <span class="error" aria-live="polite"></span>
-                    </div>
-                    <div class="form-field">
-                        <label for="service">Service Type</label>
-                        <select id="service" name="service" style="padding:.9rem 1rem; border-radius:10px; border:1px solid rgba(12,24,36,.12); background:#fbfbfa; font:inherit;">
-                            <option>Residential Cleaning</option>
-                            <option>Deep Cleaning</option>
-                            <option>Move In/Out</option>
-                            <option>Office & Commercial</option>
-                            <option>Post‑Renovation</option>
-                        </select>
-                    </div>
-                    <div class="form-field">
-                        <label for="message">Details</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Bedrooms, bathrooms, approximate size, add-ons..."></textarea>
-                        <span class="error" aria-live="polite"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Request Quote</button>
-                    <p class="form-status" role="status" aria-live="polite"></p>
-                </form>
+            <div class="hero-badge reveal">Get Started</div>
+            <h1 class="reveal">Your Personalized <span class="text-gradient">Cleaning & Media Quote</span></h1>
+            <p class="reveal">Share your project goals and we’ll respond with a transparent proposal tailored to your
+                space, schedule, and budget.</p>
+            <div class="hero-actions reveal">
+                <a href="#quote-form" class="btn btn-primary btn-lg">Start the Form</a>
+                <a href="tel:+27123456789" class="btn btn-outline btn-lg">Call Us Directly</a>
             </div>
-            <aside class="contact-details">
-                <h3>Need Help?</h3>
-                <p class="muted">Call or email and we’ll guide you through the best option.</p>
-                <ul class="details-list">
-                    <li><span class="detail-label">Phone</span> <a href="tel:+27747394461">+27 747 394 461</a></li>
-                    <li><span class="detail-label">Email</span> <a href="mailto:info@ispgroupofafrica.co.za">info@ispgroupofafrica.co.za</a></li>
-                </ul>
-                <div class="card" style="margin-top:1rem;">
-                    <h3>Pricing Guidance</h3>
-                    <p class="muted">Final pricing depends on size, condition, and add‑ons. Typical ranges:</p>
-                    <ul class="details-list" style="margin-top:.4rem;">
-                        <li><span class="detail-label">1‑2 Bedroom</span> <span>From R700–R1,200</span></li>
-                        <li><span class="detail-label">3‑4 Bedroom</span> <span>From R1,200–R1,900</span></li>
-                        <li><span class="detail-label">Deep Clean</span> <span>From R1,500–R2,500</span></li>
-                        <li><span class="detail-label">Office</span> <span>Custom monthly plans</span></li>
-                    </ul>
-                </div>
-                <div class="card" style="margin-top:1rem;">
-                    <h3>What To Expect</h3>
-                    <ul class="details-list" style="margin-top:.4rem;">
-                        <li><span class="detail-label">Fast Quote</span> <span>We’ll confirm in a few hours</span></li>
-                        <li><span class="detail-label">Checklist</span> <span>Clear scope before arrival</span></li>
-                        <li><span class="detail-label">Reminder</span> <span>Day‑before SMS/email</span></li>
-                    </ul>
-                </div>
-            </aside>
         </div>
     </section>
 
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-tag">Request A Quote</span>
+                    <h2>Tell Us About Your Project</h2>
+                    <p>Share a few details and we'll send a tailored proposal within one business day.</p>
+                </div>
+
+                <div id="quote-form" class="quote-form-container reveal panel-gradient">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label class="form-label">Service Type</label>
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select a service...</option>
+                                <option value="residential">Residential Cleaning</option>
+                                <option value="commercial">Commercial Cleaning</option>
+                                <option value="deep">Deep Cleaning</option>
+                                <option value="move">Move-In / Move-Out</option>
+                                <option value="media">Photography / Videography</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="+27 12 345 6789" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Property Details / Project Scope</label>
+                            <textarea class="form-control" rows="4"
+                                placeholder="Tell us about the size of your property, number of rooms, or details about your media project..."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Preferred Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Request Quote</button>
+                        <p class="text-center text-muted" style="margin-top: 1rem; font-size: 0.85rem;">Your information
+                            is secure. We never share your details.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer class="site-footer">
-        <div class="container footer-grid">
+        <div class="container">
             <div class="footer-brand">
-                <a href="index.html" class="brand brand--footer" aria-label="Home">
-                    <img src="images/logo.png" alt="Company logo" class="brand-logo" />
-                    <span class="brand-name">International Services <span class="accent">Production</span></span>
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <span class="brand-name">ISP</span>
+                        <span class="brand-tagline">International Services Production</span>
+                    </div>
                 </a>
-                <p>Professional cleaning services you can trust. From homes to offices, we deliver reliable, high-quality cleaning with eco-friendly options and flexible scheduling.</p>
+                <p class="text-light">Premium cleaning and media services trusted by families and businesses across
+                    Johannesburg.</p>
             </div>
+
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h3>Quick Links</h3>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="models.html">Modelling</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="quote.html">Get a Quote</a></li>
                 </ul>
             </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
+
+            <div class="footer-links">
+                <h3>Top Services</h3>
                 <ul>
-                    <li><a href="tel:+27747394461">+27 747 394 461</a></li>
-                    <li><a href="mailto:info@ispgroupofafrica.co.za">info@ispgroupofafrica.co.za</a></li>
-                    <li><span class="detail-label">Bank</span> <span>Capitec Business · Current · 1054204004 · Branch 450105</span></li>
+                    <li><a href="services.html">Residential Cleaning</a></li>
+                    <li><a href="services.html">Commercial Cleaning</a></li>
+                    <li><a href="services.html">Deep Cleaning</a></li>
+                    <li><a href="services.html">Move-In / Move-Out</a></li>
                 </ul>
-                <div class="social">
-                    <a href="https://wa.me/27747394461" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.5 11.5 0 0012 1 11 11 0 001 12a11 11 0 001.8 6.1L1 23l5-1.6A11 11 0 0012 23a11 11 0 100-22zm-8.5 18a9 9 0 01-4.6-1.3l-.3-.2-3 .9.8-2.9-.2-.3A9 9 0 1121 12a9 9 0 01-9 9zm5-6.7c-.3-.2-1.6-.8-1.9-.9s-.5-.1-.7.2-.6.9-.8 1.1-.3.2-.6.1a7.5 7.5 0 01-3.7-3.1c-.3-.3 0-.5.1-.7s.3-.3.4-.5.2-.3.3-.5 0-.4-.1-.6c-.1-.2-.7-1.7-.9-2.2s-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3a3.2 3.2 0 00-1 2.3 5.5 5.5 0 001.1 2.9 12.6 12.6 0 005 4.5 5.5 5.5 0 003 1.1c.7 0 1.4-.2 2-.7a2.7 2.7 0 00.9-2c0-.4 0-.6-.1-.8s-.3-.3-.6-.4z"/></svg></a>
-                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📍 Johannesburg, South Africa</p>
+                <p>📞 <a href="tel:+27123456789">+27 12 345 6789</a></p>
+                <p>✉️ <a href="mailto:info@isp.co.za">info@isp.co.za</a></p>
             </div>
         </div>
-        <div class="container footer-bottom">
-            <p>&copy; <span id="year"></span> International Services Production (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Services Production. All rights reserved.</p>
         </div>
     </footer>
 
-    <a href="#top" class="to-top" aria-label="Back to top">▲</a>
-    <script src="script.js"></script>
+        <!-- WhatsApp Float -->
+        <a href="https://wa.me/27123456789" class="wa-fab" aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 32 32" class="wa-icon">
+                <path
+                    d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.8 1.9 6.8L2.6 29.2l6.6-1.7C11.1 28.9 13.5 29.6 16 29.6c7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.2 0-4.4-.6-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.5-.3-.5C4.3 19.6 3.7 17.5 3.7 16c0-6.8 5.5-12.3 12.3-12.3s12.3 5.5 12.3 12.3-5.5 12.4-12.3 12.4zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.3-.5.3-.9.1-1.7-.9-2.8-2-3.9-3.9-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 2.6 1.1 3.7 1.2 5 .1.9-.8 2.2-1.8 2.5-2.9.3-1.1.3-2 .2-2.2-.1-.2-.3-.3-.7-.5z"
+                    fill="currentColor" />
+            </svg>
+        </a>
+
+        <script>
+            // Simple scroll reveal script
+            document.addEventListener('DOMContentLoaded', () => {
+                const reveals = document.querySelectorAll('.reveal');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                reveals.forEach(el => observer.observe(el));
+
+                // Mobile menu toggle
+                const toggle = document.querySelector('.nav-toggle');
+                const navList = document.querySelector('.nav-list');
+                toggle.addEventListener('click', () => {
+                    navList.classList.toggle('open');
+                });
+            });
+        </script>
 </body>
+
 </html>
-
-

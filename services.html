@@ -1,202 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Services | Cleaning Services</title>
+    <title>Our Services | ISP Cleaning</title>
+    <meta name="description"
+        content="Comprehensive cleaning services tailored to your needs. Residential, commercial, deep cleaning, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png">
 </head>
+
 <body>
+    <!-- Navigation -->
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="brand" aria-label="Home">
-                <img src="images/logo.png" alt="Company logo" class="brand-logo" />
-                <span class="brand-name">International Services <span class="accent">Production</span></span>
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">ISP</span>
+                    <span class="brand-tagline">International Services Production</span>
+                </div>
             </a>
-            <nav class="nav" aria-label="Primary">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </button>
-                <ul id="primary-menu" class="nav-list">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Cleaning Services</a></li>
+                    <li><a href="media.html">Media Production</a></li>
+                    <li><a href="models.html">Modelling Agency</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="quote.html" class="btn btn-primary btn-small">Get a Quote</a></li>
+                    <li><a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" style="min-height:46vh;">
-        <img class="hero-bg" src="images/SparkleshineBG.png" alt="Cleaning supplies" />
-        <div class="hero-overlay"></div>
+    <section class="hero page-hero">
+        <div class="hero-bg-wrapper">
+            <img src="images/Sparkleshine.png" alt="Clean interior" class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container hero-content">
-            <h1>Cleaning Services Tailored To You</h1>
-            <p>From routine upkeep to intensive deep cleans, we have you covered.</p>
-            <div class="hero-actions">
-                <a href="quote.html" class="btn btn-primary">Get a Free Quote</a>
+            <div class="hero-badge reveal">Cleaning Excellence</div>
+            <h1 class="reveal">Tailored Cleaning for <span class="text-gradient">Every Space</span></h1>
+            <p class="reveal">Residential comfort, commercial polish, and specialty add-ons—curated to fit your schedule
+                and standards.</p>
+            <div class="hero-actions reveal">
+                <a href="quote.html" class="btn btn-primary btn-lg">Request a Quote</a>
+                <a href="contact.html" class="btn btn-outline btn-lg">Chat With Us</a>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Detailed Offerings</h2>
-                <p>Exactly what we cover in each clean.</p>
-            </header>
-            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-                <article class="card"><h3>Kitchen</h3><p class="muted">Counters, sinks, stovetop, exterior appliances, cabinet fronts, floors.</p></article>
-                <article class="card"><h3>Bathrooms</h3><p class="muted">Toilets, showers, tubs, tiles, mirrors, taps, floors.</p></article>
-                <article class="card"><h3>Living Areas</h3><p class="muted">Dusting, surfaces, skirting, cobwebs, floors, glass spots.</p></article>
-                <article class="card"><h3>Bedrooms</h3><p class="muted">Dusting, surfaces, mirrors, floors; linen change on request.</p></article>
-                <article class="card"><h3>Move In/Out</h3><p class="muted">Inside cupboards, oven, fridge, baseboards, windowsills, deep detail.</p></article>
-                <article class="card"><h3>Office</h3><p class="muted">Desks, meeting rooms, reception, kitchenettes, bins; after‑hours available.</p></article>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-tag">What We Cover</span>
+                    <h2>Detailed Cleaning Offerings</h2>
+                    <p>We leave no corner untouched. Here is exactly what you can expect from our premium service.</p>
+                </div>
 
-    <section class="section" aria-label="Add-on details">
-        <div class="container">
-            <header class="section-header">
-                <h2>Add‑Ons In Detail</h2>
-            </header>
-            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-                <article class="card"><h3>Inside Oven</h3><p class="muted">Degreasing, racks, door, and polish.</p></article>
-                <article class="card"><h3>Inside Fridge</h3><p class="muted">Remove items, clean shelves/drawers, sanitize.</p></article>
-                <article class="card"><h3>Windows (Inside)</h3><p class="muted">Panes, frames, tracks, and sills.</p></article>
-                <article class="card"><h3>Carpets</h3><p class="muted">Spot treatment and deodorizing.</p></article>
-                <article class="card"><h3>Post‑Renovation</h3><p class="muted">Fine dust removal, vents, light fittings, detailed wipe‑down.</p></article>
-                <article class="card"><h3>Green Cleaning</h3><p class="muted">Eco‑friendly, low‑scent products.</p></article>
-            </div>
-            <div style="text-align:center; margin-top:1.2rem">
-                <a href="quote.html" class="btn btn-primary">Ask About Add‑Ons</a>
-            </div>
-        </div>
-    </section>
+                <div class="grid services-grid reveal">
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">🍳</div>
+                        <h3>Kitchen Cleaning</h3>
+                        <p>Complete sanitization of counters, sinks, and stovetops. We wipe down exterior appliances,
+                            cabinet fronts, and mop floors to a shine.</p>
+                    </div>
 
-    <section class="section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Popular Packages</h2>
-                <p>Transparent, value-driven cleaning options.</p>
-            </header>
-            <div class="grid services-grid">
-                <article class="card service-card">
-                    <div class="card-icon">🏠</div>
-                    <h3>Standard Home Clean</h3>
-                    <p>Kitchen, bathrooms, living areas, and bedrooms. Surfaces, floors, dusting.</p>
-                </article>
-                <article class="card service-card">
-                    <div class="card-icon">✨</div>
-                    <h3>Deep Clean</h3>
-                    <p>Inside cabinets, baseboards, appliances, tile scrub, and tough spots.</p>
-                </article>
-                <article class="card service-card">
-                    <div class="card-icon">🚚</div>
-                    <h3>Move In/Out</h3>
-                    <p>Top-to-bottom clean so your new space is spotless or handover-ready.</p>
-                </article>
-                <article class="card service-card">
-                    <div class="card-icon">🏢</div>
-                    <h3>Office & Commercial</h3>
-                    <p>Workplaces, retail, and studios kept fresh for staff and customers.</p>
-                </article>
-                <article class="card service-card">
-                    <div class="card-icon">🚧</div>
-                    <h3>Post‑Construction Cleaning</h3>
-                    <p>Fine dust removal across surfaces, fittings, vents, and windowsills.</p>
-                </article>
-                <article class="card service-card">
-                    <div class="card-icon">🧹</div>
-                    <h3>Carpet Cleaning</h3>
-                    <p>Spot treatment and deodorising for rugs and wall‑to‑wall carpets.</p>
-                </article>
-                <article class="card service-card">
-                    <div class="card-icon">🛋️</div>
-                    <h3>Upholstery Cleaning</h3>
-                    <p>Gentle fabric cleaning to lift stains and refresh sofas and chairs.</p>
-                </article>
-            </div>
-            <div style="text-align:center; margin-top:1.2rem">
-                <a href="quote.html" class="btn btn-primary">Request Pricing</a>
-            </div>
-        </div>
-    </section>
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">🛁</div>
+                        <h3>Bathroom Deep Clean</h3>
+                        <p>Scrubbing and disinfecting toilets, showers, tubs, and tiles. Mirrors are polished streak-free,
+                            and taps are shined.</p>
+                    </div>
 
-    <section class="section" aria-label="Add-ons">
-        <div class="container">
-            <header class="section-header">
-                <h2>Extras & Add‑Ons</h2>
-                <p>Customize any service to your exact needs.</p>
-            </header>
-            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-                <article class="card"><h3>Inside Fridge/Oven</h3><p class="muted">Degrease and sanitize major appliances.</p></article>
-                <article class="card"><h3>Windows & Blinds</h3><p class="muted">Inside panes, sills, and blinds dusting.</p></article>
-                <article class="card"><h3>Carpet & Upholstery</h3><p class="muted">Spot treatment and deodorizing.</p></article>
-                <article class="card"><h3>Post‑Renovation</h3><p class="muted">Fine dust removal and detailed polish.</p></article>
-                <article class="card"><h3>Airbnb Turnover</h3><p class="muted">Fast resets with linen change.</p></article>
-                <article class="card"><h3>Green Cleaning</h3><p class="muted">Eco-friendly products upon request.</p></article>
-            </div>
-        </div>
-    </section>
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">🛋️</div>
+                        <h3>Living Areas</h3>
+                        <p>Dusting all surfaces, skirting boards, and removing cobwebs. We vacuum carpets and mop hard
+                            floors for a fresh feel.</p>
+                    </div>
 
-    <section class="section" style="background: linear-gradient(120deg, var(--big-stone), #0f1d2b); color: var(--white);">
-        <div class="container" style="display:flex; gap:1rem; align-items:center; justify-content:space-between;">
-            <div>
-                <h2 style="margin:0">Ready for a spotless space?</h2>
-                <p style="margin:.2rem 0 0; opacity:.9">Tell us about your space and get a fast quote.</p>
-            </div>
-            <a href="quote.html" class="btn btn-primary">Get a Quote</a>
-        </div>
-    </section>
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">🛏️</div>
+                        <h3>Bedrooms</h3>
+                        <p>Dusting furniture, mirrors, and window sills. Floors are cleaned thoroughly, and we can change
+                            linens upon request.</p>
+                    </div>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="brand brand--footer" aria-label="Home">
-                    <img src="images/logo.png" alt="Company logo" class="brand-logo" />
-                    <span class="brand-name">International Services <span class="accent">Production</span></span>
-                </a>
-                <p>Professional cleaning services you can trust. From homes to offices, we deliver reliable, high-quality cleaning with eco-friendly options and flexible scheduling.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="quote.html">Get a Quote</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:+27747394461">+27 747 394 461</a></li>
-                    <li><a href="mailto:info@ispgroupofafrica.co.za">info@ispgroupofafrica.co.za</a></li>
-                    <li><span class="detail-label">Bank</span> <span>Capitec Business · Current · 1054204004 · Branch 450105</span></li>
-                </ul>
-                <div class="social">
-                    <a href="https://wa.me/27747394461" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.5 11.5 0 0012 1 11 11 0 001 12a11 11 0 001.8 6.1L1 23l5-1.6A11 11 0 0012 23a11 11 0 100-22zm-8.5 18a9 9 0 01-4.6-1.3l-.3-.2-3 .9.8-2.9-.2-.3A9 9 0 1121 12a9 9 0 01-9 9zm5-6.7c-.3-.2-1.6-.8-1.9-.9s-.5-.1-.7.2-.6.9-.8 1.1-.3.2-.6.1a7.5 7.5 0 01-3.7-3.1c-.3-.3 0-.5.1-.7s.3-.3.4-.5.2-.3.3-.5 0-.4-.1-.6c-.1-.2-.7-1.7-.9-2.2s-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3a3.2 3.2 0 00-1 2.3 5.5 5.5 0 001.1 2.9 12.6 12.6 0 005 4.5 5.5 5.5 0 003 1.1c.7 0 1.4-.2 2-.7a2.7 2.7 0 00.9-2c0-.4 0-.6-.1-.8s-.3-.3-.6-.4z"/></svg></a>
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">📦</div>
+                        <h3>Move In / Move Out</h3>
+                        <p>A comprehensive deep clean including inside cupboards, ovens, fridges, and detailed baseboard
+                            cleaning.</p>
+                    </div>
+
+                    <div class="card service-card">
+                        <div class="card-icon-wrapper">💼</div>
+                        <h3>Office Cleaning</h3>
+                        <p>Sanitizing desks, meeting rooms, and reception areas. We handle kitchenettes and bins, with
+                            after-hours service available.</p>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-tag">Extra Care</span>
+                    <h2>Premium Add-Ons</h2>
+                    <p>Customize your cleaning package with these specialized services.</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="card text-center reveal">
+                        <div class="card-icon-wrapper" style="margin: 0 auto 1rem;">🧼</div>
+                        <h3>Inside Oven</h3>
+                        <p>Deep degreasing of racks, door, and interior walls.</p>
+                    </div>
+                    <div class="card text-center reveal">
+                        <div class="card-icon-wrapper" style="margin: 0 auto 1rem;">❄️</div>
+                        <h3>Inside Fridge</h3>
+                        <p>Removing shelves for washing and sanitizing the interior.</p>
+                    </div>
+                    <div class="card text-center reveal">
+                        <div class="card-icon-wrapper" style="margin: 0 auto 1rem;">🪟</div>
+                        <h3>Interior Windows</h3>
+                        <p>Streak-free cleaning for glass and wiping down sills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container text-center">
+                <div class="cta-box reveal">
+                    <h2>Ready for a Spotless Space?</h2>
+                    <p>Get a customized quote for your home or business today.</p>
+                    <div class="cta-buttons">
+                        <a href="quote.html" class="btn btn-primary btn-lg">Get Free Quote</a>
+                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <span class="brand-name">ISP</span>
+                        <span class="brand-tagline">International Services Production</span>
+                    </div>
+                </a>
+                <p class="text-light">Premium cleaning and media services trusted by families and businesses across
+                    Johannesburg.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="models.html">Modelling</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Top Services</h3>
+                <ul>
+                    <li><a href="services.html">Residential Cleaning</a></li>
+                    <li><a href="services.html">Commercial Cleaning</a></li>
+                    <li><a href="services.html">Deep Cleaning</a></li>
+                    <li><a href="services.html">Move-In / Move-Out</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📍 Johannesburg, South Africa</p>
+                <p>📞 <a href="tel:+27123456789">+27 12 345 6789</a></p>
+                <p>✉️ <a href="mailto:info@isp.co.za">info@isp.co.za</a></p>
+            </div>
         </div>
-        <div class="container footer-bottom">
-            <p>&copy; <span id="year"></span> International Services Production (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Services Production. All rights reserved.</p>
         </div>
     </footer>
 
-    <a href="#top" class="to-top" aria-label="Back to top">▲</a>
-    <script src="script.js"></script>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/27123456789" class="wa-fab" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" class="wa-icon">
+            <path
+                d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.8 1.9 6.8L2.6 29.2l6.6-1.7C11.1 28.9 13.5 29.6 16 29.6c7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.2 0-4.4-.6-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.5-.3-.5C4.3 19.6 3.7 17.5 3.7 16c0-6.8 5.5-12.3 12.3-12.3s12.3 5.5 12.3 12.3-5.5 12.4-12.3 12.4zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.3-.5.3-.9.1-1.7-.9-2.8-2-3.9-3.9-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 2.6 1.1 3.7 1.2 5 .1.9-.8 2.2-1.8 2.5-2.9.3-1.1.3-2 .2-2.2-.1-.2-.3-.3-.7-.5z"
+                fill="currentColor" />
+        </svg>
+    </a>
+
+    <script>
+        // Simple scroll reveal script
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+
+            // Mobile menu toggle
+            const toggle = document.querySelector('.nav-toggle');
+            const navList = document.querySelector('.nav-list');
+            toggle.addEventListener('click', () => {
+                navList.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
+
 </html>
-
-

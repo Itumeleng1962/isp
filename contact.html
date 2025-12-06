@@ -1,148 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Contact | Cleaning Services</title>
+    <title>Contact Us | ISP</title>
+    <meta name="description"
+        content="Get in touch with International Services Production for all your cleaning and media needs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png">
+    <style>
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--off-white);
+            background: var(--off-white);
+            border-radius: 12px;
+            font-family: inherit;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--malibu);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(102, 190, 242, 0.1);
+        }
+
+        .contact-map {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            border: 0;
+            box-shadow: var(--shadow-lg);
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Navigation -->
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="brand" aria-label="Home">
-                <img src="images/logo.png" alt="Company logo" class="brand-logo" />
-                <span class="brand-name">International Services <span class="accent">Production</span></span>
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">ISP</span>
+                    <span class="brand-tagline">International Services Production</span>
+                </div>
             </a>
-            <nav class="nav" aria-label="Primary">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </button>
-                <ul id="primary-menu" class="nav-list">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="quote.html" class="btn btn-primary btn-small">Get a Quote</a></li>
+                    <li><a href="services.html">Cleaning Services</a></li>
+                    <li><a href="media.html">Media Production</a></li>
+                    <li><a href="models.html">Modelling Agency</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" style="min-height:40vh;">
-        <img class="hero-bg" src="images/SparkleshineBG.png" alt="Contact hero" />
-        <div class="hero-overlay"></div>
+    <section class="hero page-hero">
+        <div class="hero-bg-wrapper">
+            <img src="images/photographpic10.jpeg" alt="Contact ISP" class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container hero-content">
-            <h1>Contact Us</h1>
-            <p>We’re here to help with bookings, quotes, and questions.</p>
-        </div>
-    </section>
-
-    <section class="section contact">
-        <div class="container contact-grid">
-            <div class="contact-form-wrapper">
-                <h2>Send a Message</h2>
-                <p>We typically reply within a few hours.</p>
-                <form class="contact-form" novalidate>
-                    <div class="form-field">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                        <span class="error" aria-live="polite"></span>
-                    </div>
-                    <div class="form-field">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                        <span class="error" aria-live="polite"></span>
-                    </div>
-                    <div class="form-field">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+27 82 123 4567">
-                        <span class="error" aria-live="polite"></span>
-                    </div>
-                    <div class="form-field">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
-                        <span class="error" aria-live="polite"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                    <p class="form-status" role="status" aria-live="polite"></p>
-                </form>
+            <div class="hero-badge reveal">Get In Touch</div>
+            <h1 class="reveal">We're Here to <span class="text-gradient">Help You</span></h1>
+            <p class="reveal">Reach out anytime—we're available 7 days a week to assist with your cleaning and media needs.</p>
+            <div class="hero-actions reveal">
+                <a href="#contact-form" class="btn btn-primary btn-lg">Send Message</a>
+                <a href="tel:+27747394461" class="btn btn-outline btn-lg">Call Now</a>
             </div>
-            <aside class="contact-details">
-                <h3>Business Details</h3>
-                <ul class="details-list">
-                    <li><span class="detail-label">Phone</span> <a href="tel:+27747394461">+27 747 394 461</a></li>
-                    <li><span class="detail-label">Email</span> <a href="mailto:info@ispgroupofafrica.co.za">info@ispgroupofafrica.co.za</a></li>
-                    <li><span class="detail-label">Hours</span> <span>Mon–Fri: 8:00–17:00</span></li>
-                    <li><span class="detail-label">Service Area</span> <span>Greater Johannesburg & surrounding areas</span></li>
-                </ul>
-                <div class="card" style="margin-top:1rem;">
-                    <h3>Helpful Info</h3>
-                    <ul class="details-list" style="margin-top:.4rem;">
-                        <li><span class="detail-label">Response Time</span> <span>Within a few hours (Mon–Fri)</span></li>
-                        <li><span class="detail-label">Emergency</span> <span>Limited same‑day slots available</span></li>
-                        <li><span class="detail-label">Eco Products</span> <span>Available on request</span></li>
-                    </ul>
-                </div>
-                <div class="card" style="margin-top:1rem;">
-                    <h3>Quick Answers</h3>
-                    <details class="card"><summary><strong>Do you bring supplies?</strong></summary><div class="muted">Yes, all professional equipment and products are included.</div></details>
-                    <details class="card"><summary><strong>What areas do you serve?</strong></summary><div class="muted">Johannesburg core and nearby suburbs.</div></details>
-                    <details class="card"><summary><strong>Can I reschedule?</strong></summary><div class="muted">Absolutely. Please let us know 24 hours in advance.</div></details>
-                </div>
-                <div class="social">
-                    <a href="https://wa.me/27747394461" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.5 11.5 0 0012 1 11 11 0 001 12a11 11 0 001.8 6.1L1 23l5-1.6A11 11 0 0012 23a11 11 0 100-22zm-8.5 18a9 9 0 01-4.6-1.3l-.3-.2-3 .9.8-2.9-.2-.3A9 9 0 1121 12a9 9 0 01-9 9zm5-6.7c-.3-.2-1.6-.8-1.9-.9s-.5-.1-.7.2-.6.9-.8 1.1-.3.2-.6.1a7.5 7.5 0 01-3.7-3.1c-.3-.3 0-.5.1-.7s.3-.3.4-.5.2-.3.3-.5 0-.4-.1-.6c-.1-.2-.7-1.7-.9-2.2s-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3a3.2 3.2 0 00-1 2.3 5.5 5.5 0 001.1 2.9 12.6 12.6 0 005 4.5 5.5 5.5 0 003 1.1c.7 0 1.4-.2 2-.7a2.7 2.7 0 00.9-2c0-.4 0-.6-.1-.8s-.3-.3-.6-.4z"/></svg></a>
-                </div>
-            </aside>
         </div>
     </section>
 
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="split-layout">
+                    <div class="split-content reveal panel-gradient">
+                        <span class="section-tag">Contact Info</span>
+                        <h2>Reach Out To Us</h2>
+                        <p>We are available 7 days a week to assist you with your cleaning and media needs.</p>
+
+                        <div class="trust-grid"
+                            style="grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; padding: 0; box-shadow: none; background: transparent;">
+                            <div class="trust-item">
+                                <span class="trust-icon"
+                                    style="background: var(--off-white); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">📞</span>
+                                <div class="trust-text">
+                                    <strong>Phone</strong>
+                                    <span><a href="tel:+27747394461">+27 747 394 461</a></span>
+                                </div>
+                            </div>
+                            <div class="trust-item">
+                                <span class="trust-icon"
+                                    style="background: var(--off-white); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">✉️</span>
+                                <div class="trust-text">
+                                    <strong>Email</strong>
+                                    <span><a
+                                            href="mailto:info@ispgroupofafrica.co.za">info@ispgroupofafrica.co.za</a></span>
+                                </div>
+                            </div>
+                            <div class="trust-item">
+                                <span class="trust-icon"
+                                    style="background: var(--off-white); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">📍</span>
+                                <div class="trust-text">
+                                    <strong>Address</strong>
+                                    <span>Winnie Mandela Park, Zone 7, 8970<br>Gauteng, South Africa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="split-image reveal">
+                        <div id="contact-form" class="card"
+                            style="border-top: 4px solid var(--malibu); margin-top: -40px; position: relative; z-index: 10; box-shadow: var(--shadow-lg);">
+                            <h3 style="margin-bottom: 1.5rem;">Send us a Message</h3>
+                            <form action="#" method="POST">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                                <input type="tel" class="form-control" placeholder="Your Phone Number">
+                                <textarea class="form-control" rows="5" placeholder="How can we help you?"
+                                    required></textarea>
+                                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send
+                                    Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light">
+            <div class="container reveal">
+                <div class="section-header text-center">
+                    <h2>Find Us</h2>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.6787654321!2d28.2!3d-26.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDAwJzAwLjAiUyAyOMKwMTInMDAuMCJF!5e0!3m2!1sen!2sza!4v1630000000000!5m2!1sen!2sza"
+                    class="contact-map" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="site-footer">
-        <div class="container footer-grid">
+        <div class="container">
             <div class="footer-brand">
-                <a href="index.html" class="brand brand--footer" aria-label="Home">
-                    <img src="images/logo.png" alt="Company logo" class="brand-logo" />
-                    <span class="brand-name">International Services <span class="accent">Production</span></span>
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <span class="brand-name">ISP</span>
+                        <span class="brand-tagline">International Services Production</span>
+                    </div>
                 </a>
-                <p>Professional cleaning services you can trust. From homes to offices, we deliver reliable, high-quality cleaning with eco-friendly options and flexible scheduling.</p>
+                <p class="text-light">Premium cleaning and media services trusted by families and businesses across
+                    Johannesburg.</p>
             </div>
+
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h3>Quick Links</h3>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="models.html">Modelling</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="quote.html">Get a Quote</a></li>
                 </ul>
             </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
+
+            <div class="footer-links">
+                <h3>Top Services</h3>
                 <ul>
-                    <li><a href="tel:+27747394461">+27 747 394 461</a></li>
-                    <li><a href="mailto:info@ispgroupofafrica.co.za">info@ispgroupofafrica.co.za</a></li>
-                    <li><span class="detail-label">Bank</span> <span>Capitec Business · Current · 1054204004 · Branch 450105</span></li>
+                    <li><a href="services.html">Residential Cleaning</a></li>
+                    <li><a href="services.html">Commercial Cleaning</a></li>
+                    <li><a href="services.html">Deep Cleaning</a></li>
+                    <li><a href="services.html">Move-In / Move-Out</a></li>
                 </ul>
-                <div class="social">
-                    <a href="#" aria-label="Facebook" class="social-link" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.5 9.9v-7H7.9V12h2.6V9.8c0-2.6 1.6-4 3.9-4 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
-                    <a href="#" aria-label="Instagram" class="social-link" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 3a5 5 0 110 10 5 5 0 010-10zm0 2.2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zM17.8 6a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
-                    <a href="#" aria-label="LinkedIn" class="social-link" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zM8.5 8h3.8v2.1h.1c.5-1 1.9-2.1 3.9-2.1 4.2 0 5 2.7 5 6.2V23h-4v-6.6c0-1.6 0-3.6-2.2-3.6-2.2 0-2.6 1.7-2.6 3.5V23h-4V8z"/></svg></a>
-                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📍 Johannesburg, South Africa</p>
+                <p>📞 <a href="tel:+27123456789">+27 12 345 6789</a></p>
+                <p>✉️ <a href="mailto:info@isp.co.za">info@isp.co.za</a></p>
             </div>
         </div>
-        <div class="container footer-bottom">
-            <p>&copy; <span id="year"></span> International Services Production (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Services Production. All rights reserved.</p>
         </div>
     </footer>
 
-    <a href="#top" class="to-top" aria-label="Back to top">▲</a>
-    <script src="script.js"></script>
+        <!-- WhatsApp Float -->
+        <a href="https://wa.me/27123456789" class="wa-fab" aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 32 32" class="wa-icon">
+                <path
+                    d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.8 1.9 6.8L2.6 29.2l6.6-1.7C11.1 28.9 13.5 29.6 16 29.6c7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.2 0-4.4-.6-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.5-.3-.5C4.3 19.6 3.7 17.5 3.7 16c0-6.8 5.5-12.3 12.3-12.3s12.3 5.5 12.3 12.3-5.5 12.4-12.3 12.4zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.3-.5.3-.9.1-1.7-.9-2.8-2-3.9-3.9-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 2.6 1.1 3.7 1.2 5 .1.9-.8 2.2-1.8 2.5-2.9.3-1.1.3-2 .2-2.2-.1-.2-.3-.3-.7-.5z"
+                    fill="currentColor" />
+            </svg>
+        </a>
+
+        <script>
+            // Simple scroll reveal script
+            document.addEventListener('DOMContentLoaded', () => {
+                const reveals = document.querySelectorAll('.reveal');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                reveals.forEach(el => observer.observe(el));
+
+                // Mobile menu toggle
+                const toggle = document.querySelector('.nav-toggle');
+                const navList = document.querySelector('.nav-list');
+                toggle.addEventListener('click', () => {
+                    navList.classList.toggle('open');
+                });
+            });
+        </script>
 </body>
+
 </html>
-
-
