@@ -655,8 +655,51 @@
             // Mobile menu toggle
             const toggle = document.querySelector('.nav-toggle');
             const navList = document.querySelector('.nav-list');
-            toggle.addEventListener('click', () => {
-                navList.classList.toggle('open');
+            const body = document.body;
+            
+            // Create backdrop element
+            const backdrop = document.createElement('div');
+            backdrop.className = 'nav-backdrop';
+            document.body.appendChild(backdrop);
+            
+            const openMenu = () => {
+                navList.classList.add('open');
+                backdrop.classList.add('active');
+                body.classList.add('menu-open');
+                toggle.classList.add('active');
+            };
+            
+            const closeMenu = () => {
+                navList.classList.remove('open');
+                backdrop.classList.remove('active');
+                body.classList.remove('menu-open');
+                toggle.classList.remove('active');
+            };
+            
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (navList.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+            
+            // Close menu when clicking backdrop
+            backdrop.addEventListener('click', closeMenu);
+            
+            // Close menu when clicking a nav link
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMenu();
+                });
+            });
+            
+            // Close menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navList.classList.contains('open')) {
+                    closeMenu();
+                }
             });
 
             // Portfolio lightbox carousel
