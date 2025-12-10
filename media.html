@@ -76,6 +76,7 @@
         .portfolio-item:hover .portfolio-overlay {
             opacity: 1;
         }
+
         @keyframes portfolio-scroll {
             from {
                 transform: translateX(0);
@@ -255,8 +256,9 @@
             <a href="index.html" class="brand">
                 <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
                 <div class="brand-text">
-                    <span class="brand-name">ISP</span>
-                    <span class="brand-tagline">International Services Production</span>
+                    <!-- <span class="brand-name">ISP</span> -->
+                    <span class="brand-tagline">International Services</span>
+                    <span class="brand-tagline">And Production</span>
                 </div>
             </a>
 
@@ -280,17 +282,14 @@
     </header>
 
     <main>
-        <section class="hero" style="height: 70vh; min-height: 500px;">
+        <section class="hero page-hero">
             <div class="hero-bg-wrapper">
                 <img src="images/photographpic8.jpeg" alt="Camera lens" class="hero-bg">
-                <div class="hero-overlay"
-                    style="background: linear-gradient(135deg, rgba(6,6,9,0.9), rgba(15,78,152,0.6));"></div>
+                <div class="hero-overlay"></div>
             </div>
             <div class="container hero-content">
-                <div class="hero-badge reveal" style="border-color: rgba(255,255,255,0.3);">Cinematic Quality</div>
-                <h1 class="reveal">Capturing Life's <span class="text-gradient"
-                        style="background: linear-gradient(135deg, #fbbf24, #d97706); -webkit-background-clip: text;">Greatest
-                        Moments</span></h1>
+                <div class="hero-badge reveal">Cinematic Quality</div>
+                <h1 class="reveal">Capturing Life's <span class="text-gradient">Greatest Moments</span></h1>
                 <p class="reveal">Professional photography and videography dedicated to telling your unique story with
                     creativity and style.</p>
                 <div class="hero-actions reveal">
@@ -307,11 +306,13 @@
                         <img src="images/professionalpic.jpeg" alt="Professional Photographer"
                             class="rounded-image shadow-lg">
                     </div>
-                <div class="split-content reveal panel-gradient">
+                    <div class="split-content reveal panel-gradient">
                         <span class="section-tag">Visual Storytelling</span>
                         <h2>We Don't Just Take Photos, We Create Art</h2>
-                        <p>With a keen eye for detail and a passion for storytelling, we create stunning visual content that
-                            speaks for itself. Whether it's a corporate event, a wedding, or a personal portrait, we bring a
+                        <p>With a keen eye for detail and a passion for storytelling, we create stunning visual content
+                            that
+                            speaks for itself. Whether it's a corporate event, a wedding, or a personal portrait, we
+                            bring a
                             creative, personalized touch to every project.</p>
                         <ul class="feature-list">
                             <li>
@@ -347,7 +348,8 @@
                 <div class="section-header text-center reveal">
                     <span class="section-tag">Our Services</span>
                     <h2>Comprehensive Media Solutions</h2>
-                    <p>From capturing moments to crafting stories, we offer a full range of professional media services.</p>
+                    <p>From capturing moments to crafting stories, we offer a full range of professional media services.
+                    </p>
                 </div>
 
                 <div class="grid services-grid reveal">
@@ -413,153 +415,160 @@
 
         <section class="section" id="portfolio">
             <div class="container">
-            <div class="section-header text-center reveal">
-                <span class="section-tag">Our Work</span>
-                <h2>Featured Portfolio</h2>
-                <p>A glimpse into the stories we've helped tell across weddings, brands, and everyday life.</p>
-            </div>
+                <div class="section-header text-center reveal">
+                    <span class="section-tag">Our Work</span>
+                    <h2>Featured Portfolio</h2>
+                    <p>A glimpse into the stories we've helped tell across weddings, brands, and everyday life.</p>
+                </div>
 
-            <div class="portfolio-grid reveal">
-                <div class="portfolio-track">
-                    <!-- loop 1 -->
-                    <div class="portfolio-item" data-caption="Timeless wedding photography capturing candid emotions.">
-                        <img src="images/photographpic8.jpeg" alt="Wedding Photography">
-                        <div class="portfolio-overlay">
-                            <h3>Weddings & Events</h3>
+                <div class="portfolio-grid reveal">
+                    <div class="portfolio-track">
+                        <!-- loop 1 -->
+                        <div class="portfolio-item"
+                            data-caption="Timeless wedding photography capturing candid emotions.">
+                            <img src="images/photographpic8.jpeg" alt="Wedding Photography">
+                            <div class="portfolio-overlay">
+                                <h3>Weddings & Events</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Corporate portraits and branding visuals for modern teams.">
-                        <img src="images/professionalpic.jpeg" alt="Corporate Photography">
-                        <div class="portfolio-overlay">
-                            <h3>Corporate & Branding</h3>
+                        <div class="portfolio-item"
+                            data-caption="Corporate portraits and branding visuals for modern teams.">
+                            <img src="images/professionalpic.jpeg" alt="Corporate Photography">
+                            <div class="portfolio-overlay">
+                                <h3>Corporate & Branding</h3>
+                            </div>
                         </div>
-                    </div>
-                    <!-- <div class="portfolio-item" data-caption="Polished lifestyle visuals for cleaning and home brands.">
+                        <!-- <div class="portfolio-item" data-caption="Polished lifestyle visuals for cleaning and home brands.">
                         <img src="images/SparkleshineBG.png" alt="Product & Lifestyle Photography">
                         <div class="portfolio-overlay">
                             <h3>Product & Lifestyle</h3>
                         </div>
                     </div> -->
-                    <div class="portfolio-item" data-caption="Warm family moments preserved in cinematic light.">
-                        <img src="images/photographpic2.jpeg" alt="Family photography in living room">
-                        <div class="portfolio-overlay">
-                            <h3>Family Moments</h3>
+                        <div class="portfolio-item" data-caption="Warm family moments preserved in cinematic light.">
+                            <img src="images/photographpic2.jpeg" alt="Family photography in living room">
+                            <div class="portfolio-overlay">
+                                <h3>Family Moments</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Editorial-style portraits with a touch of drama.">
-                        <img src="images/photographpic3.jpeg" alt="Editorial portrait">
-                        <div class="portfolio-overlay">
-                            <h3>Portrait Sessions</h3>
+                        <div class="portfolio-item" data-caption="Editorial-style portraits with a touch of drama.">
+                            <img src="images/photographpic3.jpeg" alt="Editorial portrait">
+                            <div class="portfolio-overlay">
+                                <h3>Portrait Sessions</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Location shoots showcasing real spaces and real people.">
-                        <img src="images/photographpic4.jpeg" alt="On-location lifestyle shoot">
-                        <div class="portfolio-overlay">
-                            <h3>On-Location Shoots</h3>
+                        <div class="portfolio-item"
+                            data-caption="Location shoots showcasing real spaces and real people.">
+                            <img src="images/photographpic4.jpeg" alt="On-location lifestyle shoot">
+                            <div class="portfolio-overlay">
+                                <h3>On-Location Shoots</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Clean, bright imagery perfect for property listings.">
-                        <img src="images/photographpic5.jpeg" alt="Interior property photography">
-                        <div class="portfolio-overlay">
-                            <h3>Property & Interiors</h3>
+                        <div class="portfolio-item" data-caption="Clean, bright imagery perfect for property listings.">
+                            <img src="images/photographpic5.jpeg" alt="Interior property photography">
+                            <div class="portfolio-overlay">
+                                <h3>Property & Interiors</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Behind-the-scenes media production stills.">
-                        <img src="images/photographpic6.jpeg" alt="Behind the scenes photography">
-                        <div class="portfolio-overlay">
-                            <h3>Behind The Scenes</h3>
+                        <div class="portfolio-item" data-caption="Behind-the-scenes media production stills.">
+                            <img src="images/photographpic6.jpeg" alt="Behind the scenes photography">
+                            <div class="portfolio-overlay">
+                                <h3>Behind The Scenes</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Vibrant city-life imagery for campaigns and socials.">
-                        <img src="images/photo.jpeg" alt="Urban lifestyle photography">
-                        <div class="portfolio-overlay">
-                            <h3>Urban Lifestyle</h3>
+                        <div class="portfolio-item" data-caption="Vibrant city-life imagery for campaigns and socials.">
+                            <img src="images/photo.jpeg" alt="Urban lifestyle photography">
+                            <div class="portfolio-overlay">
+                                <h3>Urban Lifestyle</h3>
+                            </div>
                         </div>
-                    </div>
-                    <!-- loop 2 (duplicate for seamless infinite scroll) -->
-                    <div class="portfolio-item" data-caption="Timeless wedding photography capturing candid emotions.">
-                        <img src="images/photographpic8.jpeg" alt="Wedding Photography">
-                        <div class="portfolio-overlay">
-                            <h3>Weddings & Events</h3>
+                        <!-- loop 2 (duplicate for seamless infinite scroll) -->
+                        <div class="portfolio-item"
+                            data-caption="Timeless wedding photography capturing candid emotions.">
+                            <img src="images/photographpic8.jpeg" alt="Wedding Photography">
+                            <div class="portfolio-overlay">
+                                <h3>Weddings & Events</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Corporate portraits and branding visuals for modern teams.">
-                        <img src="images/professionalpic.jpeg" alt="Corporate Photography">
-                        <div class="portfolio-overlay">
-                            <h3>Corporate & Branding</h3>
+                        <div class="portfolio-item"
+                            data-caption="Corporate portraits and branding visuals for modern teams.">
+                            <img src="images/professionalpic.jpeg" alt="Corporate Photography">
+                            <div class="portfolio-overlay">
+                                <h3>Corporate & Branding</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Polished lifestyle visuals for cleaning and home brands.">
-                        <img src="images/SparkleshineBG.png" alt="Product & Lifestyle Photography">
-                        <div class="portfolio-overlay">
-                            <h3>Product & Lifestyle</h3>
+                        <div class="portfolio-item"
+                            data-caption="Polished lifestyle visuals for cleaning and home brands.">
+                            <img src="images/SparkleshineBG.png" alt="Product & Lifestyle Photography">
+                            <div class="portfolio-overlay">
+                                <h3>Product & Lifestyle</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Warm family moments preserved in cinematic light.">
-                        <img src="images/photographpic2.jpeg" alt="Family photography in living room">
-                        <div class="portfolio-overlay">
-                            <h3>Family Moments</h3>
+                        <div class="portfolio-item" data-caption="Warm family moments preserved in cinematic light.">
+                            <img src="images/photographpic2.jpeg" alt="Family photography in living room">
+                            <div class="portfolio-overlay">
+                                <h3>Family Moments</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Editorial-style portraits with a touch of drama.">
-                        <img src="images/photographpic3.jpeg" alt="Editorial portrait">
-                        <div class="portfolio-overlay">
-                            <h3>Portrait Sessions</h3>
+                        <div class="portfolio-item" data-caption="Editorial-style portraits with a touch of drama.">
+                            <img src="images/photographpic3.jpeg" alt="Editorial portrait">
+                            <div class="portfolio-overlay">
+                                <h3>Portrait Sessions</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Location shoots showcasing real spaces and real people.">
-                        <img src="images/photographpic4.jpeg" alt="On-location lifestyle shoot">
-                        <div class="portfolio-overlay">
-                            <h3>On-Location Shoots</h3>
+                        <div class="portfolio-item"
+                            data-caption="Location shoots showcasing real spaces and real people.">
+                            <img src="images/photographpic4.jpeg" alt="On-location lifestyle shoot">
+                            <div class="portfolio-overlay">
+                                <h3>On-Location Shoots</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Clean, bright imagery perfect for property listings.">
-                        <img src="images/photographpic5.jpeg" alt="Interior property photography">
-                        <div class="portfolio-overlay">
-                            <h3>Property & Interiors</h3>
+                        <div class="portfolio-item" data-caption="Clean, bright imagery perfect for property listings.">
+                            <img src="images/photographpic5.jpeg" alt="Interior property photography">
+                            <div class="portfolio-overlay">
+                                <h3>Property & Interiors</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Behind-the-scenes media production stills.">
-                        <img src="images/photographpic6.jpeg" alt="Behind the scenes photography">
-                        <div class="portfolio-overlay">
-                            <h3>Behind The Scenes</h3>
+                        <div class="portfolio-item" data-caption="Behind-the-scenes media production stills.">
+                            <img src="images/photographpic6.jpeg" alt="Behind the scenes photography">
+                            <div class="portfolio-overlay">
+                                <h3>Behind The Scenes</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-item" data-caption="Vibrant city-life imagery for campaigns and socials.">
-                        <img src="images/photographpic7.jpeg" alt="Urban lifestyle photography">
-                        <div class="portfolio-overlay">
-                            <h3>Urban Lifestyle</h3>
+                        <div class="portfolio-item" data-caption="Vibrant city-life imagery for campaigns and socials.">
+                            <img src="images/photographpic7.jpeg" alt="Urban lifestyle photography">
+                            <div class="portfolio-overlay">
+                                <h3>Urban Lifestyle</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-inner">
-            <button class="lightbox-close" aria-label="Close image">&times;</button>
-            <div class="lightbox-image-wrapper">
-                <div class="lightbox-nav">
-                    <button class="lightbox-arrow" id="lightbox-prev" aria-label="Previous image">
-                        <svg viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M15.5 19.5L9 13l6.5-6.5L17 8l-5 5 5 5z" />
-                        </svg>
-                    </button>
-                    <button class="lightbox-arrow" id="lightbox-next" aria-label="Next image">
-                        <svg viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M8.5 4.5L15 11l-6.5 6.5L7 16l5-5-5-5z" />
-                        </svg>
-                    </button>
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-inner">
+                <button class="lightbox-close" aria-label="Close image">&times;</button>
+                <div class="lightbox-image-wrapper">
+                    <div class="lightbox-nav">
+                        <button class="lightbox-arrow" id="lightbox-prev" aria-label="Previous image">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M15.5 19.5L9 13l6.5-6.5L17 8l-5 5 5 5z" />
+                            </svg>
+                        </button>
+                        <button class="lightbox-arrow" id="lightbox-next" aria-label="Next image">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M8.5 4.5L15 11l-6.5 6.5L7 16l5-5-5-5z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <img src="" alt="" class="lightbox-image">
                 </div>
-                <img src="" alt="" class="lightbox-image">
-            </div>
-            <div class="lightbox-caption">
-                <span class="lightbox-caption-text"></span>
-                <span class="lightbox-counter"></span>
+                <div class="lightbox-caption">
+                    <span class="lightbox-caption-text"></span>
+                    <span class="lightbox-counter"></span>
+                </div>
             </div>
         </div>
-    </div>
 
         <section class="section cta-section">
             <div class="container text-center">
@@ -568,7 +577,7 @@
                     <p>Book your session today and let us capture the magic.</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
-                        <a href="tel:+27123456789" class="btn btn-outline btn-lg">Call Now</a>
+                        <a href="tel:+27747394461" class="btn btn-outline btn-lg">Call Now</a>
                     </div>
                 </div>
             </div>
@@ -579,12 +588,8 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-brand">
-                <a href="index.html" class="brand">
-                    <img src="images/logo.png" alt="ISP Logo" class="brand-logo">
-                    <div class="brand-text">
-                        <span class="brand-name">ISP</span>
-                        <span class="brand-tagline">International Services Production</span>
-                    </div>
+                <a href="index.html" class="brand footer-logo">
+                    <img src="images/logo.png" alt="ISP Logo" class="brand-logo footer-logo-img">
                 </a>
                 <p class="text-light">Premium cleaning and media services trusted by families and businesses across
                     Johannesburg.</p>
@@ -615,17 +620,17 @@
             <div class="footer-contact">
                 <h3>Contact Us</h3>
                 <p>📍 Johannesburg, South Africa</p>
-                <p>📞 <a href="tel:+27123456789">+27 12 345 6789</a></p>
+                <p>📞 <a href="tel:+27747394461">+27 74 739 4461</a></p>
                 <p>✉️ <a href="mailto:info@isp.co.za">info@isp.co.za</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 International Services Production. All rights reserved.</p>
+            <p>&copy; 2025 International Services And Production. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/27123456789" class="wa-fab" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/27747394461" class="wa-fab" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 32 32" class="wa-icon">
             <path
                 d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.8 1.9 6.8L2.6 29.2l6.6-1.7C11.1 28.9 13.5 29.6 16 29.6c7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.2 0-4.4-.6-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.5-.3-.5C4.3 19.6 3.7 17.5 3.7 16c0-6.8 5.5-12.3 12.3-12.3s12.3 5.5 12.3 12.3-5.5 12.4-12.3 12.4zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.3-.5.3-.9.1-1.7-.9-2.8-2-3.9-3.9-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 2.6 1.1 3.7 1.2 5 .1.9-.8 2.2-1.8 2.5-2.9.3-1.1.3-2 .2-2.2-.1-.2-.3-.3-.7-.5z"
