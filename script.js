@@ -37,67 +37,61 @@ $$('a[href^="#"]').forEach(link => {
 const yearEl = $('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Web3Forms contact form handling
-const form = $('.contact-form');
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const status = $('.form-status', form);
-    const submitBtn = $('button[type="submit"]', form);
-    const name = $('#name', form);
-    const email = $('#email', form);
-    const phone = $('#phone', form);
-    const message = $('#message', form);
+// Web3Forms form handling function
+const handleFormSubmission = async (form, e) => {
+  e.preventDefault();
+  const status = $('.form-status', form);
+  const submitBtn = $('button[type="submit"]', form);
+  const email = $('#email', form);
+  const message = $('#message', form);
 
-    // Clear previous errors
-    $$('.error', form).forEach(err => err.textContent = '');
+  // Show loading state
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  if (status) status.textContent = '';
 
-    let valid = true;
-    const setError = (input, msg) => {
-      const err = input.parentElement.querySelector('.error');
-      if (err) err.textContent = msg || '';
-      if (msg) valid = false;
-    };
-
-    // Validation
-    setError(name, !name.value.trim() ? 'Please enter your name' : '');
-    setError(email, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value) ? 'Please enter a valid email' : '');
-    setError(message, !message.value.trim() ? 'Please enter a message' : '');
+  try {
+    const formData = new FormData(form);
     
-    if (!valid) return;
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData
+    });
 
-    // Show loading state
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    status.textContent = '';
+    const result = await response.json();
 
-    try {
-      const formData = new FormData(form);
-      
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
+    if (result.success) {
+      if (status) {
         status.textContent = 'Thank you! Your message has been sent successfully.';
         status.style.color = '#10b981';
-        form.reset();
-      } else {
-        throw new Error(result.message || 'Submission failed');
       }
-    } catch (err) {
-      console.error('Form submission error:', err);
+      form.reset();
+    } else {
+      throw new Error(result.message || 'Submission failed');
+    }
+  } catch (err) {
+    console.error('Form submission error:', err);
+    if (status) {
       status.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
       status.style.color = '#ef4444';
-    } finally {
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
     }
-  });
+  } finally {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
+};
+
+// Web3Forms contact form handling
+const contactForm = $('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => handleFormSubmission(contactForm, e));
+}
+
+// Web3Forms quote form handling
+const quoteForm = $('.quote-form');
+if (quoteForm) {
+  quoteForm.addEventListener('submit', (e) => handleFormSubmission(quoteForm, e));
 }
 
 // WhatsApp modal & floating action button

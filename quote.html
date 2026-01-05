@@ -129,10 +129,15 @@
                 </div>
 
                 <div id="quote-form" class="quote-form-container reveal panel-gradient">
-                    <form action="#" method="POST">
+                    <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="761c7932-2773-4aaf-8846-0f00636e480d">
+                        <input type="hidden" name="subject" value="New Quote Request from ISP Website">
+                        <input type="hidden" name="from_name" value="ISP Quote Form">
+                        <input type="hidden" name="redirect" value="false">
+                        
                         <div class="form-group">
                             <label class="form-label">Service Type</label>
-                            <select class="form-control" required>
+                            <select name="service_type" id="service_type" class="form-control" required>
                                 <option value="" disabled selected>Select a service...</option>
                                 <option value="residential">Residential Cleaning</option>
                                 <option value="commercial">Commercial Cleaning</option>
@@ -147,11 +152,11 @@
                             style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                             <div class="form-group">
                                 <label class="form-label">First Name</label>
-                                <input type="text" class="form-control" placeholder="John" required>
+                                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="John" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control" placeholder="Doe" required>
+                                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Doe" required>
                             </div>
                         </div>
 
@@ -159,26 +164,27 @@
                             style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                             <div class="form-group">
                                 <label class="form-label">Email Address</label>
-                                <input type="email" class="form-control" placeholder="john@example.com" required>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="john@example.com" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="+27 74 739 4461" required>
+                                <input type="tel" name="phone" id="phone" class="form-control" placeholder="+27 74 739 4461" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Property Details / Project Scope</label>
-                            <textarea class="form-control" rows="4"
+                            <textarea name="message" id="message" class="form-control" rows="4"
                                 placeholder="Tell us about the size of your property, number of rooms, or details about your media project..."
                                 required></textarea>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Preferred Date</label>
-                            <input type="date" class="form-control">
+                            <input type="date" name="preferred_date" id="preferred_date" class="form-control">
                         </div>
 
+                        <div class="form-status" style="margin-bottom: 1rem; font-weight: 500; text-align: center;"></div>
                         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Request Quote</button>
                         <p class="text-center text-muted" style="margin-top: 1rem; font-size: 0.85rem;">Your information
                             is secure. We never share your details.</p>
@@ -243,6 +249,7 @@
         </svg>
     </a>
 
+    <script src="script.js"></script>
     <script>
         // Simple scroll reveal script
         document.addEventListener('DOMContentLoaded', () => {

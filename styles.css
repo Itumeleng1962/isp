@@ -892,7 +892,7 @@ img {
    WHATSAPP FLOAT BUTTON
    ======================================== */
 .wa-fab {
-    position: fixed;
+    position: fixed !important;
     bottom: 2rem;
     right: 2rem;
     background: #25D366;
@@ -900,12 +900,19 @@ img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 99999 !important;
     transition: transform 0.3s ease;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    /* Remove any transitions on visibility/opacity to prevent flickering */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .wa-fab:hover {
@@ -1028,6 +1035,43 @@ img {
         overflow-x: hidden;
         margin: 0;
         -webkit-overflow-scrolling: touch;
+        pointer-events: none;
+    }
+
+    .nav-list.open {
+        pointer-events: auto;
+    }
+
+    /* Ensure WhatsApp button is ALWAYS visible on mobile - default state */
+    .wa-fab {
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        bottom: 1.75rem !important;
+        right: 1.75rem !important;
+    }
+    
+    /* Ensure button stays visible when menu is open */
+    body.menu-open .wa-fab {
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Ensure button stays visible when menu is closed */
+    body:not(.menu-open) .wa-fab {
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
     }
 
     .nav-list.open {
@@ -1061,6 +1105,32 @@ img {
         overflow: hidden;
         position: fixed;
         width: 100%;
+    }
+
+    /* Ensure WhatsApp button is ALWAYS visible on mobile - no transitions on visibility */
+    .wa-fab {
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        /* Explicitly prevent any visibility/opacity transitions */
+        transition-property: transform, box-shadow !important;
+    }
+
+    /* Ensure button stays visible regardless of body state */
+    body .wa-fab,
+    body.menu-open .wa-fab,
+    body:not(.menu-open) .wa-fab {
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        transition-property: transform, box-shadow !important;
     }
 
     .nav-list li {
@@ -1134,6 +1204,123 @@ img {
 
     .cta-buttons {
         flex-direction: column;
+    }
+
+    .wa-fab {
+        bottom: 1.75rem !important;
+        right: 1.75rem !important;
+        width: 56px !important;
+        height: 56px !important;
+        z-index: 99999 !important;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: fixed !important;
+    }
+
+    .wa-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Force WhatsApp button visibility on all devices - Mobile Priority */
+.wa-fab {
+    position: fixed !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+}
+
+/* Additional mobile-specific fixes for WhatsApp button */
+@media (max-width: 480px) {
+    .wa-fab {
+        bottom: 1.25rem !important;
+        right: 1.25rem !important;
+        width: 56px !important;
+        height: 56px !important;
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+    }
+}
+
+/* iOS safe area support */
+@supports (padding: max(0px)) {
+    .wa-fab {
+        bottom: max(1.5rem, env(safe-area-inset-bottom)) !important;
+        right: max(1.5rem, env(safe-area-inset-right)) !important;
+    }
+    
+    @media (max-width: 600px) {
+        .wa-fab {
+            bottom: max(1.5rem, env(safe-area-inset-bottom)) !important;
+            right: max(1.5rem, env(safe-area-inset-right)) !important;
+        }
+    }
+}
+
+/* CRITICAL: Mobile fix - Prevent WhatsApp button from flickering/disappearing */
+@media (max-width: 900px) {
+    .wa-fab {
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    /* Force visibility regardless of body state */
+    body .wa-fab,
+    body.menu-open .wa-fab,
+    body:not(.menu-open) .wa-fab,
+    html .wa-fab,
+    html body .wa-fab {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        z-index: 99999 !important;
+    }
+}
+
+/* Additional mobile-specific fixes for WhatsApp button */
+@media (max-width: 480px) {
+    .wa-fab {
+        bottom: 1.25rem !important;
+        right: 1.25rem !important;
+        width: 56px !important;
+        height: 56px !important;
+        z-index: 99999 !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: fixed !important;
+    }
+}
+
+/* iOS safe area support */
+@supports (padding: max(0px)) {
+    .wa-fab {
+        bottom: max(1.5rem, env(safe-area-inset-bottom));
+        right: max(1.5rem, env(safe-area-inset-right));
+    }
+    
+    @media (max-width: 600px) {
+        .wa-fab {
+            bottom: max(1.5rem, env(safe-area-inset-bottom));
+            right: max(1.5rem, env(safe-area-inset-right));
+        }
     }
 }
 
@@ -1261,14 +1448,98 @@ img {
     }
 
     .wa-fab {
-        bottom: 1.5rem;
-        right: 1.5rem;
-        width: 50px;
-        height: 50px;
+        bottom: 1.5rem !important;
+        right: 1.5rem !important;
+        width: 56px !important;
+        height: 56px !important;
+        z-index: 99999 !important;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: fixed !important;
+    }
+    
+    /* Force WhatsApp button to be visible on mobile home page */
+    body .wa-fab,
+    body:not(.menu-open) .wa-fab {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        z-index: 99999 !important;
     }
 
     .wa-icon {
-        width: 26px;
-        height: 26px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Force WhatsApp button visibility on all devices - Mobile Priority */
+.wa-fab {
+    position: fixed !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+}
+
+/* Additional mobile-specific fixes for WhatsApp button */
+@media (max-width: 480px) {
+    .wa-fab {
+        bottom: 1.25rem !important;
+        right: 1.25rem !important;
+        width: 56px !important;
+        height: 56px !important;
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+    }
+}
+
+/* iOS safe area support */
+@supports (padding: max(0px)) {
+    .wa-fab {
+        bottom: max(1.5rem, env(safe-area-inset-bottom)) !important;
+        right: max(1.5rem, env(safe-area-inset-right)) !important;
+    }
+    
+    @media (max-width: 600px) {
+        .wa-fab {
+            bottom: max(1.5rem, env(safe-area-inset-bottom)) !important;
+            right: max(1.5rem, env(safe-area-inset-right)) !important;
+        }
+    }
+}
+
+/* CRITICAL: Mobile fix - Prevent WhatsApp button from flickering/disappearing */
+@media (max-width: 900px) {
+    .wa-fab {
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    /* Force visibility regardless of body state */
+    body .wa-fab,
+    body.menu-open .wa-fab,
+    body:not(.menu-open) .wa-fab,
+    html .wa-fab,
+    html body .wa-fab {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        z-index: 99999 !important;
     }
 }
