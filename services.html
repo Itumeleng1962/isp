@@ -191,8 +191,108 @@
             </div>
         </section>
 
-        <!-- Director Section -->
-       
+        <section class="section" id="portfolio">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-tag">Our Work</span>
+                    <h2>Sparkling Results</h2>
+                    <p>See the difference professional cleaning makes.</p>
+                </div>
+
+                <div class="portfolio-grid reveal">
+                    <div class="portfolio-track">
+                        <!-- loop 1 -->
+                        <div class="portfolio-item" data-caption="Professional cleaning equipment ready for action.">
+                            <img src="images/cleaning_bucket.png" alt="Cleaning bucket and supplies">
+                            <div class="portfolio-overlay">
+                                <h3>Premium Equipment</h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-caption="Our friendly, professional staff.">
+                            <img src="images/professional_cleaner.png" alt="Professional Cleaner">
+                            <div class="portfolio-overlay">
+                                <h3>Expert Staff</h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-caption="A pristine living room after our deep clean.">
+                            <img src="images/clean_living_room.png" alt="Clean Living Room">
+                            <div class="portfolio-overlay">
+                                <h3>Living Room</h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-caption="Modern kitchen restored to showroom shine.">
+                            <img src="images/clean_kitchen.png" alt="Clean Kitchen">
+                            <div class="portfolio-overlay">
+                                <h3>Kitchen Detailing</h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-caption="Hygenic and sparkling bathrooms.">
+                            <img src="images/clean_bathroom.png" alt="Clean Bathroom">
+                            <div class="portfolio-overlay">
+                                <h3>Bathroom Sanitize</h3>
+                            </div>
+                        </div>
+                        <!-- loop 2 (duplicate for infinite scroll) -->
+                        <div class="portfolio-item" data-caption="Professional cleaning equipment ready for action.">
+                            <img src="images/cleaning_bucket.png" alt="Cleaning bucket and supplies">
+                            <div class="portfolio-overlay">
+                                <h3>Premium Equipment</h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-caption="Our friendly, professional staff.">
+                            <img src="images/professional_cleaner.png" alt="Professional Cleaner">
+                            <div class="portfolio-overlay">
+                                <h3>Expert Staff</h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-caption="A pristine living room after our deep clean.">
+                            <img src="images/clean_living_room.png" alt="Clean Living Room">
+                            <div class="portfolio-overlay">
+                                <h3>Living Room</h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-caption="Modern kitchen restored to showroom shine.">
+                            <img src="images/clean_kitchen.png" alt="Clean Kitchen">
+                            <div class="portfolio-overlay">
+                                <h3>Kitchen Detailing</h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-caption="Hygenic and sparkling bathrooms.">
+                            <img src="images/clean_bathroom.png" alt="Clean Bathroom">
+                            <div class="portfolio-overlay">
+                                <h3>Bathroom Sanitize</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-inner">
+                <button class="lightbox-close" aria-label="Close image">&times;</button>
+                <div class="lightbox-image-wrapper">
+                    <div class="lightbox-nav">
+                        <button class="lightbox-arrow" id="lightbox-prev" aria-label="Previous image">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M15.5 19.5L9 13l6.5-6.5L17 8l-5 5 5 5z" />
+                            </svg>
+                        </button>
+                        <button class="lightbox-arrow" id="lightbox-next" aria-label="Next image">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M8.5 4.5L15 11l-6.5 6.5L7 16l5-5-5-5z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <img src="" alt="" class="lightbox-image">
+                </div>
+                <div class="lightbox-caption">
+                    <span class="lightbox-caption-text"></span>
+                    <span class="lightbox-counter"></span>
+                </div>
+            </div>
+        </div>
+
 
         <section class="section cta-section">
             <div class="container text-center">
@@ -280,26 +380,26 @@
             const toggle = document.querySelector('.nav-toggle');
             const navList = document.querySelector('.nav-list');
             const body = document.body;
-            
+
             // Create backdrop element
             const backdrop = document.createElement('div');
             backdrop.className = 'nav-backdrop';
             document.body.appendChild(backdrop);
-            
+
             const openMenu = () => {
                 navList.classList.add('open');
                 backdrop.classList.add('active');
                 body.classList.add('menu-open');
                 toggle.classList.add('active');
             };
-            
+
             const closeMenu = () => {
                 navList.classList.remove('open');
                 backdrop.classList.remove('active');
                 body.classList.remove('menu-open');
                 toggle.classList.remove('active');
             };
-            
+
             toggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 if (navList.classList.contains('open')) {
@@ -308,23 +408,136 @@
                     openMenu();
                 }
             });
-            
+
             // Close menu when clicking backdrop
             backdrop.addEventListener('click', closeMenu);
-            
+
             // Close menu when clicking a nav link
             navList.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     closeMenu();
                 });
             });
-            
+
             // Close menu on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && navList.classList.contains('open')) {
                     closeMenu();
                 }
             });
+        });
+    </script>
+    <script>
+        // Portfolio lightbox carousel
+        document.addEventListener('DOMContentLoaded', () => {
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            if (portfolioItems.length > 0) {
+                const lightbox = document.getElementById('lightbox');
+                if (!lightbox) return; // Guard clause
+
+                const lightboxImg = lightbox.querySelector('.lightbox-image');
+                const lightboxCaptionText = lightbox.querySelector('.lightbox-caption-text');
+                const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+                const lightboxClose = lightbox.querySelector('.lightbox-close');
+                const btnPrev = document.getElementById('lightbox-prev');
+                const btnNext = document.getElementById('lightbox-next');
+
+                const slides = Array.from(portfolioItems).map(item => {
+                    const img = item.querySelector('img');
+                    return {
+                        src: img.src,
+                        alt: img.alt || '',
+                        caption: item.getAttribute('data-caption') || img.alt || ''
+                    };
+                });
+
+                let currentIndex = 0;
+                let autoPlayId = null;
+                const AUTO_PLAY_INTERVAL = 6000; // ms
+
+                const showSlide = (index, direction = 'right') => {
+                    if (index < 0) index = slides.length - 1;
+                    if (index >= slides.length) index = 0;
+                    currentIndex = index;
+
+                    const slide = slides[currentIndex];
+                    lightboxImg.classList.remove('slide-in-left', 'slide-in-right');
+
+                    // force reflow to restart animation
+                    void lightboxImg.offsetWidth;
+
+                    lightboxImg.src = slide.src;
+                    lightboxImg.alt = slide.alt;
+                    lightboxCaptionText.textContent = slide.caption;
+                    lightboxCounter.textContent = `${currentIndex + 1} / ${slides.length}`;
+                    lightboxImg.classList.add(direction === 'right' ? 'slide-in-right' : 'slide-in-left');
+                };
+
+                const startAutoPlay = () => {
+                    if (autoPlayId) clearInterval(autoPlayId);
+                    autoPlayId = setInterval(() => {
+                        showSlide(currentIndex + 1, 'right');
+                    }, AUTO_PLAY_INTERVAL);
+                };
+
+                const stopAutoPlay = () => {
+                    if (autoPlayId) {
+                        clearInterval(autoPlayId);
+                        autoPlayId = null;
+                    }
+                };
+
+                const openLightbox = (startIndex) => {
+                    showSlide(startIndex, 'right');
+                    lightbox.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                    startAutoPlay();
+                };
+
+                const closeLightbox = () => {
+                    lightbox.classList.remove('open');
+                    document.body.style.overflow = '';
+                    stopAutoPlay();
+                };
+
+                portfolioItems.forEach((item, index) => {
+                    item.addEventListener('click', () => {
+                        openLightbox(index);
+                    });
+                });
+
+                btnPrev.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showSlide(currentIndex - 1, 'left');
+                    startAutoPlay();
+                });
+
+                btnNext.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showSlide(currentIndex + 1, 'right');
+                    startAutoPlay();
+                });
+
+                lightboxClose.addEventListener('click', closeLightbox);
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (!lightbox.classList.contains('open')) return;
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowLeft') {
+                        showSlide(currentIndex - 1, 'left');
+                        startAutoPlay();
+                    }
+                    if (e.key === 'ArrowRight') {
+                        showSlide(currentIndex + 1, 'right');
+                        startAutoPlay();
+                    }
+                });
+            }
         });
     </script>
 </body>
