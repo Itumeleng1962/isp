@@ -180,6 +180,114 @@
             </div>
         </section>
 
+        <!-- Packages Section -->
+        <section class="section packages-section" id="packages">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-tag">Pricing</span>
+                    <h2>Choose Your Package</h2>
+                    <p>Select the perfect package for your modeling career journey.</p>
+                    <div class="registration-deadline">
+                        <span class="deadline-icon">📅</span>
+                        <span class="deadline-text">Registration closes: <strong id="closing-date">February 28,
+                                2026</strong></span>
+                    </div>
+                </div>
+
+                <div class="packages-grid reveal">
+                    <!-- Basic Package -->
+                    <div class="package-card" data-package="basic">
+                        <div class="package-badge">Starter</div>
+                        <h3 class="package-name">Basic</h3>
+                        <div class="package-price">
+                            <span class="currency">R</span>
+                            <span class="amount">2,500</span>
+                        </div>
+                        <p class="package-description">Perfect for aspiring models starting their journey</p>
+                        <ul class="package-features">
+                            <li><span class="feature-icon">✓</span> Professional portfolio photoshoot (5 photos)</li>
+                            <li><span class="feature-icon">✓</span> Basic modeling training (2 sessions)</li>
+                            <li><span class="feature-icon">✓</span> Profile on our website</li>
+                            <li><span class="feature-icon">✓</span> Access to casting calls</li>
+                            <li><span class="feature-icon">✓</span> 3 months agency representation</li>
+                        </ul>
+                        <button class="package-btn btn-pay" data-package="basic" data-price="2500">
+                            <span class="btn-text">Pay Now</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                        <div class="package-closed-message" style="display: none;">
+                            <span class="closed-icon">🔒</span>
+                            <p>Registration for this package is now closed</p>
+                        </div>
+                    </div>
+
+                    <!-- Standard Package -->
+                    <div class="package-card package-featured" data-package="standard">
+                        <div class="package-badge badge-featured">Most Popular</div>
+                        <h3 class="package-name">Standard</h3>
+                        <div class="package-price">
+                            <span class="currency">R</span>
+                            <span class="amount">5,000</span>
+                        </div>
+                        <p class="package-description">Comprehensive package for serious models</p>
+                        <ul class="package-features">
+                            <li><span class="feature-icon">✓</span> Professional portfolio photoshoot (15 photos)</li>
+                            <li><span class="feature-icon">✓</span> Advanced modeling training (5 sessions)</li>
+                            <li><span class="feature-icon">✓</span> Runway & catwalk training</li>
+                            <li><span class="feature-icon">✓</span> Profile on our website & social media</li>
+                            <li><span class="feature-icon">✓</span> Priority access to casting calls</li>
+                            <li><span class="feature-icon">✓</span> 6 months agency representation</li>
+                            <li><span class="feature-icon">✓</span> Personal brand consultation</li>
+                        </ul>
+                        <button class="package-btn btn-pay btn-featured" data-package="standard" data-price="5000">
+                            <span class="btn-text">Pay Now</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                        <div class="package-closed-message" style="display: none;">
+                            <span class="closed-icon">🔒</span>
+                            <p>Registration for this package is now closed</p>
+                        </div>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="package-card" data-package="premium">
+                        <div class="package-badge badge-premium">Premium</div>
+                        <h3 class="package-name">Premium</h3>
+                        <div class="package-price">
+                            <span class="currency">R</span>
+                            <span class="amount">10,000</span>
+                        </div>
+                        <p class="package-description">Elite package for professional models</p>
+                        <ul class="package-features">
+                            <li><span class="feature-icon">✓</span> Premium portfolio photoshoot (30 photos)</li>
+                            <li><span class="feature-icon">✓</span> Comprehensive modeling training (10 sessions)</li>
+                            <li><span class="feature-icon">✓</span> Runway, catwalk & posing masterclass</li>
+                            <li><span class="feature-icon">✓</span> Professional video portfolio</li>
+                            <li><span class="feature-icon">✓</span> Featured profile on website & social media</li>
+                            <li><span class="feature-icon">✓</span> Exclusive access to premium casting calls</li>
+                            <li><span class="feature-icon">✓</span> 12 months agency representation</li>
+                            <li><span class="feature-icon">✓</span> Personal brand development & marketing</li>
+                            <li><span class="feature-icon">✓</span> Industry networking events access</li>
+                        </ul>
+                        <button class="package-btn btn-pay" data-package="premium" data-price="10000">
+                            <span class="btn-text">Pay Now</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                        <div class="package-closed-message" style="display: none;">
+                            <span class="closed-icon">🔒</span>
+                            <p>Registration for this package is now closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="packages-note text-center reveal">
+                    <p>💳 Secure payment powered by Ozow | 🔒 All transactions are encrypted and secure</p>
+                    <p>📞 Need help choosing? <a href="contact.html" class="text-link">Contact us</a> or call <a
+                            href="tel:+27747394461" class="text-link">074 739 4461</a></p>
+                </div>
+            </div>
+        </section>
+
         <!-- Portfolio Gallery -->
         <section class="section">
             <div class="container">
@@ -354,26 +462,26 @@
             const toggle = document.querySelector('.nav-toggle');
             const navList = document.querySelector('.nav-list');
             const body = document.body;
-            
+
             // Create backdrop element
             const backdrop = document.createElement('div');
             backdrop.className = 'nav-backdrop';
             document.body.appendChild(backdrop);
-            
+
             const openMenu = () => {
                 navList.classList.add('open');
                 backdrop.classList.add('active');
                 body.classList.add('menu-open');
                 toggle.classList.add('active');
             };
-            
+
             const closeMenu = () => {
                 navList.classList.remove('open');
                 backdrop.classList.remove('active');
                 body.classList.remove('menu-open');
                 toggle.classList.remove('active');
             };
-            
+
             toggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 if (navList.classList.contains('open')) {
@@ -382,17 +490,17 @@
                     openMenu();
                 }
             });
-            
+
             // Close menu when clicking backdrop
             backdrop.addEventListener('click', closeMenu);
-            
+
             // Close menu when clicking a nav link
             navList.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     closeMenu();
                 });
             });
-            
+
             // Close menu on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && navList.classList.contains('open')) {
@@ -401,6 +509,7 @@
             });
         });
     </script>
+    <script src="packages.js"></script>
 </body>
 
 </html>
