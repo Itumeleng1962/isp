@@ -149,61 +149,214 @@
             </div>
         </section>
 
-        <!-- Target Market -->
-        <section class="section bg-light">
+        <!-- Miss ISP Beauty Contest Section -->
+        <section class="section">
             <div class="container">
-                <div class="section-header text-center reveal">
-                    <span class="section-tag">Our Clients</span>
-                    <h2>Industries We Serve</h2>
-                    <p>We provide exceptional talent for diverse industries and brands.</p>
+                <div class="split-layout">
+                    <div class="split-image reveal">
+                        <img src="images/beauty.jpeg" alt="Miss ISP Beauty Contest" class="rounded-image shadow-lg">
+                    </div>
+                    <div class="split-content reveal panel-gradient">
+                        <span class="section-tag" style="color: #d4af37;">Shine Bright</span>
+                        <h2>Miss .I.S.P. Beauty Contest</h2>
+                        <h3 class="text-gradient">Dare to Dream, Dare to Dazzle</h3>
+                        <p>Are you ready to grace the spotlight and unleash your inner radiance? Look no further! Join
+                            our
+                            beauty contest and be part of something extraordinary.</p>
+
+                        <div class="contest-details"
+                            style="margin: 2rem 0; padding: 1.5rem; background: rgba(212, 175, 55, 0.1); border-left: 4px solid #d4af37; border-radius: 4px;">
+                            <ul class="feature-list" style="margin: 0;">
+                                <li style="margin-bottom: 0.5rem;"><strong>🏆 Grand Prize:</strong> R5000.00 Cash</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>📅 Closing Date:</strong> 30 April 2026</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>🔞 Age Category:</strong> 18 - 32 Years</li>
+                            </ul>
+                        </div>
+
+                        <p>Register now and let your beauty illuminate the world! Choose your entry package below.</p>
+                    </div>
                 </div>
 
-                <div class="grid services-grid reveal">
-                    <div class="card service-card">
-                        <div class="card-icon-wrapper">👗</div>
-                        <h3>Fashion Brands</h3>
-                        <p>Clothing, accessories, and footwear brands looking for the perfect model representation.</p>
+                <!-- Embedded Registration Form -->
+                <div class="reveal"
+                    style="max-width: 800px; margin: 3rem auto 0; background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(212, 175, 55, 0.2);">
+                    <div class="text-center" style="margin-bottom: 2rem;">
+                        <h3 style="color: #d4af37;">Participant Registration</h3>
+                        <p>Fill in your details below to join the contest.</p>
                     </div>
+                    <form action="https://formspree.io/f/xbjnqzzd" method="POST" enctype="multipart/form-data">
+                        <div class="grid"
+                            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="firstName"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; font-family: inherit;">
+                            </div>
+                            <!-- Surname -->
+                            <div class="form-group">
+                                <label for="lastName"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; font-family: inherit;">
+                            </div>
+                        </div>
 
-                    <div class="card service-card">
-                        <div class="card-icon-wrapper">💄</div>
-                        <h3>Beauty Brands</h3>
-                        <p>Cosmetics, skincare, and hair care companies seeking authentic and diverse talent.</p>
-                    </div>
+                        <div class="grid"
+                            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email" required
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; font-family: inherit;">
+                            </div>
+                            <!-- Phone -->
+                            <div class="form-group">
+                                <label for="phone"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone
+                                    Number</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; font-family: inherit;">
+                            </div>
+                        </div>
 
-                    <div class="card service-card">
-                        <div class="card-icon-wrapper">🎬</div>
-                        <h3>Entertainment Industry</h3>
-                        <p>Film, television, and advertising productions requiring professional models.</p>
-                    </div>
+                        <div class="grid"
+                            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <!-- Age -->
+                            <div class="form-group">
+                                <label for="age"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Age</label>
+                                <input type="number" id="age" name="age" min="18" max="32" required
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; font-family: inherit;"
+                                    placeholder="18 - 32">
+                            </div>
+
+
+                            <!-- Address -->
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label for="address"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Residential
+                                    Address</label>
+                                <input type="text" id="address" name="address" required
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; font-family: inherit;">
+                            </div>
+
+                            <!-- Motivation -->
+                            <div class="form-group" style="margin-bottom: 2rem;">
+                                <label for="motivation"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Why do you want to
+                                    enter?</label>
+                                <textarea id="motivation" name="motivation" rows="4"
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; font-family: inherit; resize: vertical;"></textarea>
+                            </div>
+
+                            <!-- Registration Fee -->
+                            <div class="form-group" style="margin-bottom: 2rem;">
+                                <label for="fee"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Registration
+                                    Fee</label>
+                                <div style="position: relative;">
+                                    <span
+                                        style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #666;">R</span>
+                                    <input type="text" id="fee" name="fee" value="250.00" readonly
+                                        style="width: 100%; padding: 0.75rem 0.75rem 0.75rem 2.5rem; border: 1px solid #ddd; border-radius: 0.5rem; font-family: inherit; background-color: #f9f9f9; font-weight: 700; color: #333;">
+                                </div>
+                            </div>
+
+                            <!-- Payment Gateway UI -->
+                            <div class="payment-gateway"
+                                style="border-top: 2px solid #eee; padding-top: 2rem; margin-top: 2rem;">
+                                <h4 style="margin-bottom: 1rem; color: #333;">Secure Payment</h4>
+                                <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #666;">Select your preferred
+                                    payment method to complete registration.</p>
+
+                                <div class="payment-methods"
+                                    style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+                                    <label class="payment-option" style="cursor: pointer;">
+                                        <input type="radio" name="payment_method" value="card" checked
+                                            style="display: none;">
+                                        <div class="payment-card"
+                                            style="border: 2px solid #ddd; border-radius: 8px; padding: 1rem; text-align: center; transition: all 0.3s;">
+                                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💳</div>
+                                            <div style="font-size: 0.85rem; font-weight: 500;">Card</div>
+                                        </div>
+                                    </label>
+                                    <label class="payment-option" style="cursor: pointer;">
+                                        <input type="radio" name="payment_method" value="eft" style="display: none;">
+                                        <div class="payment-card"
+                                            style="border: 2px solid #ddd; border-radius: 8px; padding: 1rem; text-align: center; transition: all 0.3s;">
+                                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏦</div>
+                                            <div style="font-size: 0.85rem; font-weight: 500;">EFT</div>
+                                        </div>
+                                    </label>
+                                    <label class="payment-option" style="cursor: pointer;">
+                                        <input type="radio" name="payment_method" value="scan" style="display: none;">
+                                        <div class="payment-card"
+                                            style="border: 2px solid #ddd; border-radius: 8px; padding: 1rem; text-align: center; transition: all 0.3s;">
+                                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📱</div>
+                                            <div style="font-size: 0.85rem; font-weight: 500;">Scan</div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div style="text-align: center; margin-top: 2rem;">
+                                    <button type="submit" class="btn btn-primary btn-lg"
+                                        style="width: 100%; max-width: 350px; display: inline-flex; justify-content: center; align-items: center; gap: 0.5rem; opacity: 0.7; cursor: not-allowed;"
+                                        disabled title="Payment gateway integration pending">
+                                        <span>Pay R250.00 & Register</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                                        </svg>
+                                    </button>
+                                    <div
+                                        style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; opacity: 0.6;">
+                                        <span>🔒 SSL Secure</span>
+                                        <span>🛡️ Trusted Payment</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Inline styles for payment options -->
+                            <style>
+                                .payment-option input:checked+.payment-card {
+                                    border-color: #d4af37;
+                                    background-color: rgba(212, 175, 55, 0.05);
+                                    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+                                }
+                            </style>
+                    </form>
                 </div>
             </div>
         </section>
 
-        <!-- Packages Section -->
-        <section class="section packages-section" id="packages">
+        <!-- Contest Packages Section (Hidden/Integrated into Contest Section above) but technically user asked for "packages as they are seperate". 
+             Wait, the user wants "Pricing/Choose Your Package section" to separate Agency from Contest.
+             I will rename the section above to "Beauty Contest Entry" and keep the R250/R500/R750 there.
+        -->
+
+        <!-- Miss ISP Beauty Contest Section (continued) -->
+        <section class="section" id="contest-entry">
             <div class="container">
                 <div class="section-header text-center reveal">
-                    <span class="section-tag">Pricing</span>
-                    <h2>Choose Your Package</h2>
-                    <p>Select the perfect package for your modeling career journey.</p>
+                    <span class="section-tag">Competition Entry</span>
+                    <h2>Contest Entry Fees</h2>
                     <div class="registration-deadline">
                         <span class="deadline-icon">📅</span>
-                        <span class="deadline-text">Registration closes: <strong id="closing-date">February 28,
+                        <span class="deadline-text">Closing Date: <strong id="closing-date">30 April
                                 2026</strong></span>
                     </div>
                 </div>
 
-                <div class="packages-grid reveal">
-                    <!-- Basic Package -->
-                    <div class="package-card" data-package="basic">
-                        <div class="package-badge">Starter</div>
-                        <h3 class="package-name">Basic</h3>
-                        <div class="package-price">
-                            <span class="currency">R</span>
-                            <span class="amount">2,500</span>
-                        </div>
-                        <p class="package-description">Perfect for aspiring models starting their journey</p>
+                <div class="packages-grid reveal" style="margin-bottom: 3rem;">
+                    <!-- Contest Basic -->
+                    <div class="package-card" data-package="contest_basic">
+                        <h3 class="package-name">First Package</h3>
+                        <div class="package-price"><span class="currency">R</span><span class="amount">250</span></div>
                         <ul class="package-features">
                             <li><span class="feature-icon">✓</span> Professional portfolio photoshoot (5 photos)</li>
                             <li><span class="feature-icon">✓</span> Basic modeling training (2 sessions)</li>
@@ -211,25 +364,13 @@
                             <li><span class="feature-icon">✓</span> Access to casting calls</li>
                             <li><span class="feature-icon">✓</span> 3 months agency representation</li>
                         </ul>
-                        <button class="package-btn btn-pay" data-package="basic" data-price="2500">
-                            <span class="btn-text">Pay Now</span>
-                            <span class="btn-icon">→</span>
-                        </button>
-                        <div class="package-closed-message" style="display: none;">
-                            <span class="closed-icon">🔒</span>
-                            <p>Registration for this package is now closed</p>
-                        </div>
+                        <button class="package-btn btn-pay" data-package="contest_basic" data-price="250">Pay Entry
+                            Fee</button>
                     </div>
-
-                    <!-- Standard Package -->
-                    <div class="package-card package-featured" data-package="standard">
-                        <div class="package-badge badge-featured">Most Popular</div>
-                        <h3 class="package-name">Standard</h3>
-                        <div class="package-price">
-                            <span class="currency">R</span>
-                            <span class="amount">5,000</span>
-                        </div>
-                        <p class="package-description">Comprehensive package for serious models</p>
+                    <!-- Contest Standard -->
+                    <div class="package-card" data-package="contest_standard">
+                        <h3 class="package-name">Second Package</h3>
+                        <div class="package-price"><span class="currency">R</span><span class="amount">500</span></div>
                         <ul class="package-features">
                             <li><span class="feature-icon">✓</span> Professional portfolio photoshoot (15 photos)</li>
                             <li><span class="feature-icon">✓</span> Advanced modeling training (5 sessions)</li>
@@ -239,25 +380,13 @@
                             <li><span class="feature-icon">✓</span> 6 months agency representation</li>
                             <li><span class="feature-icon">✓</span> Personal brand consultation</li>
                         </ul>
-                        <button class="package-btn btn-pay btn-featured" data-package="standard" data-price="5000">
-                            <span class="btn-text">Pay Now</span>
-                            <span class="btn-icon">→</span>
-                        </button>
-                        <div class="package-closed-message" style="display: none;">
-                            <span class="closed-icon">🔒</span>
-                            <p>Registration for this package is now closed</p>
-                        </div>
+                        <button class="package-btn btn-pay" data-package="contest_standard" data-price="500">Pay Entry
+                            Fee</button>
                     </div>
-
-                    <!-- Premium Package -->
-                    <div class="package-card" data-package="premium">
-                        <div class="package-badge badge-premium">Premium</div>
-                        <h3 class="package-name">Premium</h3>
-                        <div class="package-price">
-                            <span class="currency">R</span>
-                            <span class="amount">10,000</span>
-                        </div>
-                        <p class="package-description">Elite package for professional models</p>
+                    <!-- Contest Premium -->
+                    <div class="package-card" data-package="contest_premium">
+                        <h3 class="package-name">3rd Package</h3>
+                        <div class="package-price"><span class="currency">R</span><span class="amount">750</span></div>
                         <ul class="package-features">
                             <li><span class="feature-icon">✓</span> Premium portfolio photoshoot (30 photos)</li>
                             <li><span class="feature-icon">✓</span> Comprehensive modeling training (10 sessions)</li>
@@ -269,23 +398,15 @@
                             <li><span class="feature-icon">✓</span> Personal brand development & marketing</li>
                             <li><span class="feature-icon">✓</span> Industry networking events access</li>
                         </ul>
-                        <button class="package-btn btn-pay" data-package="premium" data-price="10000">
-                            <span class="btn-text">Pay Now</span>
-                            <span class="btn-icon">→</span>
-                        </button>
-                        <div class="package-closed-message" style="display: none;">
-                            <span class="closed-icon">🔒</span>
-                            <p>Registration for this package is now closed</p>
-                        </div>
+                        <button class="package-btn btn-pay" data-package="contest_premium" data-price="750">Pay Entry
+                            Fee</button>
                     </div>
                 </div>
-
-                <div class="packages-note text-center reveal">
-                    <p>💳 Secure payment powered by Ozow | 🔒 All transactions are encrypted and secure</p>
-                    <p>📞 Need help choosing? <a href="contact.html" class="text-link">Contact us</a> or call <a
-                            href="tel:+27747394461" class="text-link">074 739 4461</a></p>
-                </div>
             </div>
+        </section>
+
+        </div>
+        </div>
         </section>
 
         <!-- Portfolio Gallery -->
@@ -333,45 +454,7 @@
             </div>
         </section>
 
-        <!-- Operations -->
-        <section class="section">
-            <div class="container">
-                <div class="split-layout reverse">
-                    <div class="split-image reveal">
-                        <img src="images/Ownerofthecompany.jpeg" alt="ISP Team" class="rounded-image shadow-lg">
-                    </div>
-                    <div class="split-content reveal panel-gradient">
-                        <span class="section-tag">How We Work</span>
-                        <h2>Our Operations</h2>
-                        <p>We maintain the highest standards through comprehensive model development and exceptional
-                            client service.</p>
-                        <ul class="feature-list">
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <div>
-                                    <strong>Model Scouting</strong>
-                                    <p>Identify and recruit top talent from diverse backgrounds.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <div>
-                                    <strong>Model Training</strong>
-                                    <p>Provide training and development to enhance skills.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <div>
-                                    <strong>Client Service</strong>
-                                    <p>Deliver exceptional service tailored to each client's needs.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- CTA Section -->
         <section class="section cta-section">
